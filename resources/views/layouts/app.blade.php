@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }} 
+                    {{ config('app.name', 'CAMHOTUR') }} 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,6 +41,13 @@
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                                     <a class="dropdown-item" href="{{ route('emprendimientos.index') }}"> <b>
                                             Emprendimientos</b> </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                    <a class="dropdown-item" href="{{ route('empresarios.index') }}"> <b>
+                                            Empresarios</b> </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                    <a class="dropdown-item" href="{{ route('clientes.index') }}"> <b>
+                                            Clientes</b> </a>
+                                    
                                     
 
                     </ul>

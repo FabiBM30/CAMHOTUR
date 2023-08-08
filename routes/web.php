@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
+
 // RUTA EMPRENDIMIENTO
 Route::resource('emprendimientos', App\Http\Controllers\EmprendimientoController::class)->middleware('auth');
 Auth::routes();
@@ -24,3 +25,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //RUTA DISTRITOS
 Route::resource('distritos', App\Http\Controllers\DistritoController::class)->middleware('auth');
+
+//RUTA EMPRESARIOS
+Route::resource('empresarios', App\Http\Controllers\EmpresarioController::class)->middleware('auth');
+
+//RUTA CLIENTES
+Route::resource('clientes', App\Http\Controllers\ClienteController::class)->middleware('auth');
+
+
