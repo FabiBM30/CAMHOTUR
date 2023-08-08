@@ -20,7 +20,7 @@ class Emprendimiento extends Model
 {
     
     static $rules = [
-//		'idEmprendimiento' => 'required',
+		//'idEmprendimiento' => 'required',
 		'nombreEmprendimiento' => 'required',
 		'descripcionEmprendimiento' => 'required',
     ];
