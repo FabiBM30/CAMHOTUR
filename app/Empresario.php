@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Empresario extends Model
 {
-    
+  protected $primaryKey = 'idEmpresario';
     static $rules = [
 		//'idEmpresario' => 'required',
 		'nombreEmpresario' => 'required',
