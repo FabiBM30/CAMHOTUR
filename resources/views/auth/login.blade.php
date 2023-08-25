@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Inicio de Sesion') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login)') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
