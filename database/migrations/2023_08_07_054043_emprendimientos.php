@@ -17,6 +17,7 @@ class Emprendimientos extends Migration
         Schema::create('emprendimientos', function (Blueprint $table) {
             $table->bigIncrements('idEmprendimiento');
             $table->string('nombreEmprendimiento');
+            $table->string('nombreEmprendimiento');
             $table->string('descripcionEmprendimiento');
             $table->timestamps();
         });
