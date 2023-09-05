@@ -1,7 +1,7 @@
+@extends('layouts.app')
+ {{-- @extends('pruebaestilos') --}}
 
- @extends('layouts.app')
-
-@section('contenido')
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
