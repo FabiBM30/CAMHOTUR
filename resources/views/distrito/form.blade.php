@@ -12,6 +12,18 @@
             {!! $errors->first('descripcionDistrito', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
+        <div class="form-group">
+    {{ Form::label('imagenDistrito', 'Imagen Distrito') }}
+    <br>
+    <img src="{{ asset('storage/'.$distrito->imagenDistrito) }}" width="300" alt="">
+    <br>
+    {{ Form::file('nuevaImagenDistrito', ['class' => 'form-control']) }}
+</div>
+
+
+    </div>
+     <br>
+
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>

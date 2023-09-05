@@ -20,7 +20,7 @@ class Emprendimiento extends Model
 {
   protected $primaryKey = 'idEmprendimiento';
     static $rules = [
-		//'idEmprendimiento' => 'required',
+		'id_Distrito' => 'required',
 		'nombreEmprendimiento' => 'required',
 		'descripcionEmprendimiento' => 'required',
     ];
@@ -32,8 +32,11 @@ class Emprendimiento extends Model
      *
      * @var array
      */
-    protected $fillable = ['idEmprendimiento','nombreEmprendimiento','descripcionEmprendimiento'];
+    protected $fillable = ['idEmprendimiento','id_Distrito','nombreEmprendimiento','descripcionEmprendimiento'];
 
-
+    public function distrito()
+    {
+        return $this->hasOne('App\Distrito', 'id', 'id_Distrito');
+    }
 
 }

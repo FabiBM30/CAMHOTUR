@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Distrito extends Model
 {
-
+  protected $primaryKey = 'id';
     static $rules = [
 		'nombreDistrito' => 'required',
 		'descripcionDistrito' => 'required',
@@ -31,6 +31,7 @@ class Distrito extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombreDistrito','descripcionDistrito'];
+    protected $fillable = ['id','nombreDistrito','descripcionDistrito', 'imagenDistrito'];
 
 }
+

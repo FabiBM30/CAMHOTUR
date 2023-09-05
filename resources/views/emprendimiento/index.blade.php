@@ -30,7 +30,32 @@
                     @endif
 
                     <div class="card-body">
+                        <form method="GET" action="{{ route('emprendimiento.index') }}">
+                            @csrf
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                    Filtro
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Matambu']) }}">Matambu</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Puerto Carrillo']) }}">Puerto Carrillo</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Monte Romo']) }}">Monte Romo</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Huacas']) }}">Huacas</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Hojancha']) }}">Hojancha</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Something else here']) }}">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </form>
+                        @if(isset($filtro))
+                        <p>Filtro aplicado: {{ $filtro }}</p>
+                    @endif
+                    
+
+<!-- Tu tabla y contenido aquí -->
+
                         <div class="table-responsive">
+
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
@@ -39,7 +64,7 @@
 										<th>Idemprendimiento</th>
 										<th>Nombreemprendimiento</th>
 										<th>Descripcionemprendimiento</th>
-
+                                        <th>NombreDistrito</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -47,10 +72,11 @@
                                     @foreach ($emprendimientos as $emprendimiento)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $emprendimiento->idEmprendimiento }}</td>
 											<td>{{ $emprendimiento->nombreEmprendimiento }}</td>
 											<td>{{ $emprendimiento->descripcionEmprendimiento }}</td>
+                                            <td>{{ $emprendimiento->distrito->nombreDistrito }}</td>
 
                                             <td>
                                                 <form action="{{ route('emprendimientos.destroy',$emprendimiento->idEmprendimiento) }}" method="POST">

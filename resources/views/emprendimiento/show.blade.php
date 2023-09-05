@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $emprendimiento->name ?? "{{ __('Show') Emprendimiento" }}
+{{ $emprendimiento->name ?? "{{ __('Show') Emprendimiento" }}
 @endsection
 
 @section('content')
@@ -31,6 +31,7 @@
                         <div class="form-group">
                             <strong>Descripcionemprendimiento:</strong>
                             {{ $emprendimiento->descripcionEmprendimiento }}
+
                         </div>
 
                     </div>

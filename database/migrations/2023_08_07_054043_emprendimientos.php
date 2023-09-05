@@ -16,10 +16,18 @@ class Emprendimientos extends Migration
         //
         Schema::create('emprendimientos', function (Blueprint $table) {
             $table->bigIncrements('idEmprendimiento');
-            $table->string('nombreEmprendimiento');
+            $table->bigInteger('id_Distrito')->unsigned();
             $table->string('nombreEmprendimiento');
             $table->string('descripcionEmprendimiento');
             $table->timestamps();
+
+
+
+
+
+//llave foranea de distritos
+            $table->foreign('id_Distrito')->references('id')->on('distritos');
+
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Emprendimiento;
+use App\Distrito;
 use Illuminate\Http\Request;
 
 /**
@@ -16,13 +17,28 @@ class EmprendimientoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $emprendimientos = Emprendimiento::paginate();
+     // Asegúrate de importar el modelo Distrito
+public function index(Request $request)
+{
+    $filtro = $request->input('filtro');
 
-        return view('emprendimiento.index', compact('emprendimientos'))
-            ->with('i', (request()->input('page', 1) - 1) * $emprendimientos->perPage());
+    $query = Distrito::query();
+
+    // Si se ha seleccionado un filtro, aplica el filtro a la consulta
+    if ($filtro) {
+        $query->where('nombre', $filtro); // Reemplaza 'nombre' por el nombre real del campo en tu tabla de distritos
     }
+
+    $distritos = $query->paginate();
+
+    $emprendimientos = Emprendimiento::paginate();
+
+return view('emprendimiento.index', compact('emprendimientos'))
+    ->with('i', ($request->input('page', 1) - 1) * $emprendimientos->perPage());
+
+}
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -32,7 +48,8 @@ class EmprendimientoController extends Controller
     public function create()
     {
         $emprendimiento = new Emprendimiento();
-        return view('emprendimiento.create', compact('emprendimiento'));
+        $distrito = Distrito::all();
+        return view('emprendimiento.create', compact('emprendimiento','distrito'));
     }
 
     /**
@@ -73,8 +90,9 @@ class EmprendimientoController extends Controller
     public function edit($id)
     {
         $emprendimiento = Emprendimiento::find($id);
+        $distrito = Distrito::all();
 
-        return view('emprendimiento.edit', compact('emprendimiento'));
+        return view('emprendimiento.edit', compact('emprendimiento','distrito'));
     }
 
     /**
