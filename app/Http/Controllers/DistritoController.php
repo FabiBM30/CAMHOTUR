@@ -42,14 +42,24 @@ class DistritoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        request()->validate(Distrito::$rules);
-
-        $distrito = Distrito::create($request->all());
-
-        return redirect()->route('distritos.index')
-            ->with('success', 'Distrito created successfully.');
+{
+    request()->validate(Distrito::$rules);
+    $distritoData = request()->except('_token');
+    
+    if ($request->hasFile('nuevaImagenDistrito')) {
+        $file = $request->file('nuevaImagenDistrito');
+        $filename = uniqid() . '.png'; 
+        $file->storeAs('public/images', $filename);
+        $distritoData['imagenDistrito'] = $filename;
     }
+    
+
+    Distrito::create($distritoData);
+
+    return redirect()->route('distritos.index')->with('success', 'Distrito creado exitosamente.');
+}
+
+    
 
     /**
      * Display the specified resource.
@@ -88,7 +98,28 @@ class DistritoController extends Controller
     {
         request()->validate(Distrito::$rules);
 
-        $distrito->update($request->all());
+        $currentImage = $distrito->imagenDistrito;
+        
+        if($request->hasFile('nuevaImagenDistrito')){
+            $file = $request->file('nuevaImagenDistrito');
+            $filename = uniqid() . '.png';
+            $file->storeAs('public/images',$filename);
+            
+
+            $distrito->imagenDistrito = $filename;
+
+            if($currentImage){
+                $imagePath = storage_path('app/public/images/' .$currentImage);
+                if(file_exists($imagePath)){
+                    unlink($imagePath);
+                }
+            }
+        }
+
+
+
+
+        $distrito->update($request->except('nuevaImagenDistrito'));
 
         return redirect()->route('distritos.index')
             ->with('success', 'Distrito updated successfully');

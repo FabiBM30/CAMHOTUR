@@ -38,7 +38,7 @@
                                         
 										<th>Nombredistrito</th>
 										<th>Descripciondistrito</th>
-
+                                        <th>Foto </th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -49,7 +49,9 @@
                                             
 											<td>{{ $distrito->nombreDistrito }}</td>
 											<td>{{ $distrito->descripcionDistrito }}</td>
-
+                                            <td>
+                                            <img src="{{ asset('storage/images/'.$distrito->imagenDistrito) }}" width="150" alt="" title="" />
+                                           </td>
                                             <td>
                                                 <form action="{{ route('distritos.destroy',$distrito->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('distritos.show',$distrito->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>

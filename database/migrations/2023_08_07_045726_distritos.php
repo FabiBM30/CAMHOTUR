@@ -18,6 +18,7 @@ class Distritos extends Migration
             $table->bigIncrements('id');
             $table->string('nombreDistrito');
             $table->string('descripcionDistrito');
+            $table->string('imagenDistrito')->nullable();
             $table->timestamps();
         });
     }

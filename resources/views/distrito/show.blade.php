@@ -28,7 +28,12 @@
                             <strong>Descripciondistrito:</strong>
                             {{ $distrito->descripcionDistrito }}
                         </div>
-
+                        <div class="form-group">
+                        <strong>Foto Distrito:</strong>
+                        <br>
+                        <img src="{{ asset('storage/images/'.$distrito->imagenDistrito) }}" width="150" alt="" title="" />
+                    </div>
+                     
                     </div>
                 </div>
             </div>
