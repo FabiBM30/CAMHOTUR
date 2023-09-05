@@ -3,7 +3,6 @@
 @section('template_title')
     Emprendimiento
 @endsection
-
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -29,36 +28,18 @@
                         </div>
                     @endif
 
-                    <div class="card-body">
-                        <form method="GET" action="{{ route('emprendimiento.index') }}">
-                            @csrf
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                    Filtro
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Matambu']) }}">Matambu</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Puerto Carrillo']) }}">Puerto Carrillo</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Monte Romo']) }}">Monte Romo</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Huacas']) }}">Huacas</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Hojancha']) }}">Hojancha</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{{ route('emprendimiento.index', ['filtro' => 'Something else here']) }}">Something else here</a></li>
-                                </ul>
-                            </div>
-                        </form>
-                        @if(isset($filtro))
-                        <p>Filtro aplicado: {{ $filtro }}</p>
-                    @endif
-                    
+                   
 
-<!-- Tu tabla y contenido aquí -->
-
-                        <div class="table-responsive">
-
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <div class="search-container">
+                                                    <input type="text" id="nombreDistritoInput" placeholder="Buscar distrito...">
+                                                    <p id="noResultsMessage" style="display: none;">Lo siento, solo puede buscar un distrito.</p
+                                                </div>
+                                                <table class="table table-striped table-hover">
+                                                    <thead class="thead">
+                                                        <tr>
+                                        
                                         <th>No</th>
                                         
 										<th>Idemprendimiento</th>
@@ -89,6 +70,9 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                    
+                               
+
                                 </tbody>
                             </table>
                         </div>
@@ -98,4 +82,57 @@
             </div>
         </div>
     </div>
+    <script>
+      const searchInput = document.getElementById('nombreDistritoInput');
+const tableRows = document.querySelectorAll('tbody tr');
+
+const searchEmployees = () => {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    if (searchTerm.trim() === '') {
+        // Si el campo de búsqueda está vacío, muestra todos los resultados
+        tableRows.forEach((row) => {
+            row.style.display = 'table-row';
+        });
+        hideNoResultsMessage();
+        return;
+    }
+
+    tableRows.forEach((row) => {
+        const nombreDistritoCell = row.querySelector('td:nth-child(5)'); // Suponiendo que el campo NombreDistrito es la quinta columna (índice 4)
+        if (nombreDistritoCell) {
+            const nombreDistrito = nombreDistritoCell.innerText.toLowerCase();
+            if (nombreDistrito.includes(searchTerm)) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        }
+    });
+
+    // Mostrar un mensaje si no se encontraron resultados
+    const resultsFound = Array.from(tableRows).some((row) => row.style.display === 'table-row');
+    if (resultsFound) {
+        hideNoResultsMessage();
+    } else {
+        showNoResultsMessage("Lo siento, solo puede buscar un distrito");
+    }
+};
+
+const hideNoResultsMessage = () => {
+    const noResultsMessage = document.getElementById('noResultsMessage');
+    noResultsMessage.style.display = 'none';
+};
+
+const showNoResultsMessage = (message) => {
+    const noResultsMessage = document.getElementById('noResultsMessage');
+    noResultsMessage.innerText = message;
+    noResultsMessage.style.display = 'block';
+};
+
+searchInput.addEventListener('input', searchEmployees);
+    </script>
+
+
 @endsection
+

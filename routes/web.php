@@ -33,6 +33,11 @@ Route::resource('empresarios', App\Http\Controllers\EmpresarioController::class)
 Route::resource('clientes', App\Http\Controllers\ClienteController::class)->middleware('auth');
 
 //RUTA FILTRO DE PRUEBA
-Route::get('/emprendimiento', 'EmprendimientoController@index')->name('emprendimiento.index');
+
+//Route::get('filtrar-emprendimientos', [App\Http\Controllers\EmprendimientoController::class, 'filtrar'])->middleware('auth')->name('filtrar-emprendimientos');
+//Route::get('emprendimientos.index', [App\Http\Controllers\EmprendimientoController::class, 'index'])->middleware('auth')->name('emprendimientos.index');
+
+
+
 
 
