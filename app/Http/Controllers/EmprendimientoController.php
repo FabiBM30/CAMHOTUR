@@ -18,25 +18,18 @@ class EmprendimientoController extends Controller
      * @return \Illuminate\Http\Response
      */
      // Asegúrate de importar el modelo Distrito
-public function index(Request $request)
-{
-    $filtro = $request->input('filtro');
-
-    $query = Distrito::query();
-
-    // Si se ha seleccionado un filtro, aplica el filtro a la consulta
-    if ($filtro) {
-        $query->where('nombre', $filtro); // Reemplaza 'nombre' por el nombre real del campo en tu tabla de distritos
-    }
-
-    $distritos = $query->paginate();
-
-    $emprendimientos = Emprendimiento::paginate();
-
-return view('emprendimiento.index', compact('emprendimientos'))
-    ->with('i', ($request->input('page', 1) - 1) * $emprendimientos->perPage());
-
-}
+     public function index()
+     {
+         $emprendimientos = Emprendimiento::paginate();
+         $distritos = Distrito::all();
+ 
+         return view('emprendimiento.index', compact('emprendimientos','distritos'))
+             ->with('i', (request()->input('page', 1) - 1) * $emprendimientos->perPage());
+     }
+ 
+   
+ 
+ 
 
 
 
