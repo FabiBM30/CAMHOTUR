@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <!-- <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <!--<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                      {{ config('app.name', 'CAMHOTUR') }} CAMHOTUR
@@ -49,14 +49,14 @@
                                             Empresarios</b> </a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                                     <a class="dropdown-item" href="{{ route('clientes.index') }}"> <b>
-                                            Clientes</b> </a>
+                                            Clientes</b> </a>-->
                                     
                                     
 
                     </ul>
 
                     
-                    <ul class="navbar-nav ml-auto">
+                    <!--<ul class="navbar-nav ml-auto">
                        
                         @guest
                             <li class="nav-item">
@@ -90,9 +90,11 @@
                 </div>
             </div>
         </nav>  -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+   <div id = "app"> 
+    @auth       
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">CAMHOTUR</a>
+    <a class="navbar-brand" href="{{ url('/home') }}">CAMHOTUR</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -106,33 +108,62 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-            Filtro
+            Servicios
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Matambu</a></li>
-            <li><a class="dropdown-item" href="#">Puerto Carrillo</a></li>
-            <li><a class="dropdown-item" href="#">Monte Romo</a></li>
-            <li><a class="dropdown-item" href="#">Huacas</a></li>
-            <li><a class="dropdown-item" href="#">Hojancha</a></li>
+            <li><a class="dropdown-item" href="#">Productos</a></li>
+            <li><a class="dropdown-item" href="#">Servicios</a></li>
+            <li><a class="dropdown-item" href="#">Turismo</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link disabled" aria-disabled="true"></a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ms-auto">
+          <!-- Authentication Links -->
+          @guest
+              
+          @else
+              <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                      role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" v-pre>
+                      <b>{{ Auth::user()->name }}</b>
+                  </a>
+
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                          <b>{{ __('Salir') }}</b>
+                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                          class="d-none">
+                          @csrf
+                      </form>
+                  </div>
+
+              </li>
+          @endguest
+      </ul>
+
+
+
     </div>
   </div>
 </nav>
+@endauth
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+  </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 </body>

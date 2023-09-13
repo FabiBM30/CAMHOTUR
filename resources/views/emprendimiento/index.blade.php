@@ -17,7 +17,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('emprendimientos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Agregar nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -42,10 +42,10 @@
                                         
                                         <th>No</th>
                                         
-										<th>Idemprendimiento</th>
-										<th>Nombreemprendimiento</th>
-										<th>Descripcionemprendimiento</th>
-                                        <th>NombreDistrito</th>
+										{{-- <th>Idemprendimiento</th> --}}
+										<th>Nombre</th>
+										<th>Descripcion</th>
+                                        <th>Distrito</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -54,19 +54,28 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-											<td>{{ $emprendimiento->idEmprendimiento }}</td>
+											{{-- <td>{{ $emprendimiento->idEmprendimiento }}</td> --}}
 											<td>{{ $emprendimiento->nombreEmprendimiento }}</td>
 											<td>{{ $emprendimiento->descripcionEmprendimiento }}</td>
                                             <td>{{ $emprendimiento->distrito->nombreDistrito }}</td>
 
                                             <td>
                                                 <form action="{{ route('emprendimientos.destroy',$emprendimiento->idEmprendimiento) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('emprendimientos.show',$emprendimiento->idEmprendimiento) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('emprendimientos.edit',$emprendimiento->idEmprendimiento) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
+                                                    {{-- <a class="btn btn-sm btn-primary " href="{{ route('emprendimientos.show',$emprendimiento->idEmprendimiento) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>            --}}
+                                                <a class="btn btn-sm btn-warning" href="#" onclick="confirmUpdate({{ $emprendimiento->idEmprendimiento }})">
+                                                    <i class="fa fa-fw fa-edit"></i> {{ __('Actualizar') }}
+                                                </a>
+                                                
+                                                @csrf
+                                                @method('DELETE')
+                                     <button type="button" class="btn btn-danger btn-sm" onclick="deleteEmprendimiento({{ $emprendimiento->idEmprendimiento }})">
+                                       <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                            </form>
+
+
+
+
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -115,7 +124,7 @@ const searchEmployees = () => {
     if (resultsFound) {
         hideNoResultsMessage();
     } else {
-        showNoResultsMessage("Lo siento, solo puede buscar un distrito");
+        showNoResultsMessage("Solo distritos de Hojancha");
     }
 };
 
@@ -135,4 +144,72 @@ searchInput.addEventListener('input', searchEmployees);
 
 
 @endsection
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    function deleteEmprendimiento(emprendimientoId) {
+        const route = "{{ route('emprendimientos.destroy', ':emprendimientoId') }}".replace(':emprendimientoId', emprendimientoId);
+        
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: '¡No podrás deshacer esta acción!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Si el usuario confirma la eliminación, envía el formulario de eliminación
+                fetch(route, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ _method: 'DELETE' })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Recarga la página o realiza alguna otra acción si la eliminación fue exitosa
+                        location.reload(); // Puedes recargar la página como ejemplo
+                    } else {
+                        // Maneja el error de eliminación aquí
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'No se pudo eliminar el registro.',
+                            icon: 'error',
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Ocurrió un error inesperado.',
+                        icon: 'error',
+                    });
+                });
+            }
+        });
+    }
+    </script>
+    
+    
+    <script>
+        function confirmUpdate(emprendimientoId) {
+            Swal.fire({
+                title: '¿Quieres editar este registro?',
+                text: 'Estás a punto de editar este registro. ¿Quieres continuar?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, editar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{ route('emprendimientos.edit', ':emprendimientoId') }}".replace(':emprendimientoId', emprendimientoId);
+                }
+            });
+        }
+        </script>
+        
 

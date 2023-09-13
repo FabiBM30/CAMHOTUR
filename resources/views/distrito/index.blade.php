@@ -4,6 +4,7 @@
     Distrito
 @endsection
 
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -18,7 +19,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('distritos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Agregar nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -36,9 +37,10 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nombredistrito</th>
-										<th>Descripciondistrito</th>
-                                        <th>Foto </th>
+										<th>Nombre</th>
+                                        <th>Descripcion</th>
+
+                                        <th>Imagen </th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -54,11 +56,15 @@
                                            </td>
                                             <td>
                                                 <form action="{{ route('distritos.destroy',$distrito->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('distritos.show',$distrito->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('distritos.edit',$distrito->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    {{-- <a class="btn btn-sm btn-primary " href="{{ route('distritos.show',$distrito->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a> --}}
+                                                    <a class="btn btn-sm btn-warning" href="#" onclick="confirmUpdate({{ $distrito->id }})">
+                                                        <i class="fa fa-fw fa-edit"></i> {{ __('Actualizar') }}
+                                                    </a>
+                                                    
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                         <button type="button" class="btn btn-danger btn-sm" onclick="deleteDistrito({{ $distrito->id }})">
+                                           <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -71,5 +77,74 @@
                 {!! $distritos->links() !!}
             </div>
         </div>
+       
     </div>
 @endsection
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    function deleteDistrito(distritoId) {
+        const route = "{{ route('distritos.destroy', ':distritoId') }}".replace(':distritoId', distritoId);
+        
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: '¡No podrás deshacer esta acción!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Si el usuario confirma la eliminación, envía el formulario de eliminación
+                fetch(route, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ _method: 'DELETE' })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Recarga la página o realiza alguna otra acción si la eliminación fue exitosa
+                        location.reload(); // Puedes recargar la página como ejemplo
+                    } else {
+                        // Maneja el error de eliminación aquí
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'No se pudo eliminar el registro.',
+                            icon: 'error',
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Ocurrió un error inesperado.',
+                        icon: 'error',
+                    });
+                });
+            }
+        });
+    }
+    </script>
+    
+    
+    <script>
+        function confirmUpdate(distritoId) {
+            Swal.fire({
+                title: '¿Quieres editar este registro?',
+                text: 'Estás a punto de editar este registro. ¿Quieres continuar?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, editar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{ route('distritos.edit', ':distritoId') }}".replace(':distritoId', distritoId);
+                }
+            });
+        }
+        </script>
+        
+    
