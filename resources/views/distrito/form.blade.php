@@ -26,6 +26,7 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary">Listo</button>
+        <a class="btn btn-danger" href="{{ route('distritos.index') }}"> Atrás</a>
     </div>
 </div>

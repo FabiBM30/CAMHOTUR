@@ -11,6 +11,7 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
+                        <button class="btn">Cerrar sesión</button>
                         @csrf
 
                         <div class="row mb-3">
@@ -57,6 +58,11 @@
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Iniciar') }}
+                                </button>
+                                <button type="submit" class="btn btn-danger" style="float:center;">
+
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+
                                 </button>
 
                                 @if (Route::has('password.request'))
