@@ -2,18 +2,19 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('nombreDistrito') }}
-            {{ Form::text('nombreDistrito', $distrito->nombreDistrito, ['class' => 'form-control' . ($errors->has('nombreDistrito') ? ' is-invalid' : ''), 'placeholder' => 'Nombredistrito']) }}
+            {{ Form::label('Nombre') }}
+            {{ Form::text('nombreDistrito', $distrito->nombreDistrito, ['class' => 'form-control' . ($errors->has('nombreDistrito') ? ' is-invalid' : ''), 'placeholder' => 'Ponga el nombre del distrito...']) }}
             {!! $errors->first('nombreDistrito', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('descripcionDistrito') }}
-            {{ Form::text('descripcionDistrito', $distrito->descripcionDistrito, ['class' => 'form-control' . ($errors->has('descripcionDistrito') ? ' is-invalid' : ''), 'placeholder' => 'Descripciondistrito']) }}
+            {{ Form::label('Descripcion') }}
+            {{ Form::text('descripcionDistrito', $distrito->descripcionDistrito, ['class' => 'form-control' . ($errors->has('descripcionDistrito') ? ' is-invalid' : ''), 'placeholder' => 'Ponga una descripcion del distrito...']) }}
             {!! $errors->first('descripcionDistrito', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
         <div class="form-group">
-    {{ Form::label('imagenDistrito', 'Imagen Distrito') }}
+   
+    {{ Form::label('imagenDistrito', 'Seleccione una imagen para el distrito...') }}
     <br>
     <img src="{{ asset('storage/'.$distrito->imagenDistrito) }}" width="300" alt="">
     <br>

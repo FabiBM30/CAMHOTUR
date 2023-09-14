@@ -19,7 +19,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('distritos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Agregar nuevo') }}
+                                  {{ __('Agregar Distrito') }}
                                 </a>
                               </div>
                         </div>
@@ -86,7 +86,7 @@
         const route = "{{ route('distritos.destroy', ':distritoId') }}".replace(':distritoId', distritoId);
         
         Swal.fire({
-            title: '¿Estás seguro?',
+            title: '¿Estás seguro de eliminar este distrito?',
             text: '¡No podrás deshacer esta acción!',
             icon: 'warning',
             showCancelButton: true,
@@ -111,7 +111,7 @@
                         // Maneja el error de eliminación aquí
                         Swal.fire({
                             title: 'Error',
-                            text: 'No se pudo eliminar el registro.',
+                            text: 'No se pudo eliminar este distrito ya que tiene emprendimientos asignados.',
                             icon: 'error',
                         });
                     }
@@ -133,11 +133,11 @@
     <script>
         function confirmUpdate(distritoId) {
             Swal.fire({
-                title: '¿Quieres editar este registro?',
-                text: 'Estás a punto de editar este registro. ¿Quieres continuar?',
+                title: '¿Quieres actualizar este distrito?',
+                text: '¿Vas a actualizar este distrito, quieres continuar?',
                 icon: 'question',
                 showCancelButton: true,
-                confirmButtonText: 'Sí, editar',
+                confirmButtonText: 'Sí, actualizar.',
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
