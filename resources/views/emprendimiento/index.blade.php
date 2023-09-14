@@ -17,7 +17,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('emprendimientos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Agregar nuevo') }}
+                                  {{ __('Agregar Emprendimiento') }}
                                 </a>
                               </div>
                         </div>
@@ -34,13 +34,13 @@
                                             <div class="table-responsive">
                                                 <div class="search-container">
                                                     <input type="text" id="nombreDistritoInput" placeholder="Buscar distrito...">
-                                                    <p id="noResultsMessage" style="display: none;">Lo siento, solo puede buscar un distrito.</p
+                                                    <p id="noResultsMessage" style="display: none;">Solo distritos de Hojancha</p>
                                                 </div>
                                                 <table class="table table-striped table-hover">
                                                     <thead class="thead">
                                                         <tr>
                                         
-                                        <th>No</th>
+                                        <th>n#</th>
                                         
 										{{-- <th>Idemprendimiento</th> --}}
 										<th>Nombre</th>
@@ -108,7 +108,7 @@ const searchEmployees = () => {
     }
 
     tableRows.forEach((row) => {
-        const nombreDistritoCell = row.querySelector('td:nth-child(5)'); // Suponiendo que el campo NombreDistrito es la quinta columna (índice 4)
+        const nombreDistritoCell = row.querySelector('td:nth-child(4)'); // Suponiendo que el campo NombreDistrito es la quinta columna (índice 4)
         if (nombreDistritoCell) {
             const nombreDistrito = nombreDistritoCell.innerText.toLowerCase();
             if (nombreDistrito.includes(searchTerm)) {
@@ -151,7 +151,7 @@ searchInput.addEventListener('input', searchEmployees);
         const route = "{{ route('emprendimientos.destroy', ':emprendimientoId') }}".replace(':emprendimientoId', emprendimientoId);
         
         Swal.fire({
-            title: '¿Estás seguro?',
+            title: '¿Estás seguro de eliminar este emprendimiento?',
             text: '¡No podrás deshacer esta acción!',
             icon: 'warning',
             showCancelButton: true,
@@ -198,11 +198,11 @@ searchInput.addEventListener('input', searchEmployees);
     <script>
         function confirmUpdate(emprendimientoId) {
             Swal.fire({
-                title: '¿Quieres editar este registro?',
-                text: 'Estás a punto de editar este registro. ¿Quieres continuar?',
+                title: '¿Quieres actualizar este emprendimiento?',
+                text: 'Estás a punto de actualizar este emprendimiento ¿Quieres continuar?',
                 icon: 'question',
                 showCancelButton: true,
-                confirmButtonText: 'Sí, editar',
+                confirmButtonText: 'Sí, actualizar',
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
