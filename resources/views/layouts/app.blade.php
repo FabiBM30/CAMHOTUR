@@ -108,16 +108,17 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-            Servicios
+              Tipo de Emprendimiento
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Productos</a></li>
-            <li><a class="dropdown-item" href="#">Servicios</a></li>
-            <li><a class="dropdown-item" href="#">Turismo</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Productos') }}">Productos</a></li>
+            <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Servicios') }}">Servicios</a></li>
+            <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Turismo') }}">Turismo</a></li>            
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+      </li>
+      
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true"></a>
         </li>

@@ -61,6 +61,15 @@ class EmprendimientoController extends Controller
             ->with('success', 'Emprendimiento created successfully.');
     }
 
+    public function filtrarEmprendimientosPorTipo($tipo)
+{
+    
+    $emprendimientosFiltrados = Emprendimiento::where('tipo_emprendimiento', $tipo)->get();
+    
+  
+    return view('emprendimiento.filtered_results', compact('emprendimientosFiltrados', 'tipo'));
+
+}
     /**
      * Display the specified resource.
      *

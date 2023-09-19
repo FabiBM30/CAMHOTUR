@@ -22,6 +22,7 @@ class Emprendimiento extends Model
     static $rules = [
 		'id_Distrito' => 'required',
 		'nombreEmprendimiento' => 'required',
+    'tipo_emprendimiento' => 'required',
 		'descripcionEmprendimiento' => 'required',
     ];
 
@@ -32,7 +33,8 @@ class Emprendimiento extends Model
      *
      * @var array
      */
-    protected $fillable = ['idEmprendimiento','id_Distrito','nombreEmprendimiento','descripcionEmprendimiento'];
+    
+    protected $fillable = ['idEmprendimiento', 'id_Distrito', 'nombreEmprendimiento', 'descripcionEmprendimiento', 'tipo_emprendimiento'];
 
     public function distrito()
     {

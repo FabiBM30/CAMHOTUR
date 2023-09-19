@@ -18,7 +18,7 @@ class Empresarios extends Migration
             $table->bigIncrements('idEmpresario');
             $table->string('nombreEmpresario');
             $table->string('apellidoEmpresario');
-            //$table->int('cedulaEmpresario');
+     
             //$table->int('edadEmpresario');
             $table->string('generoEmpresario');
             $table->timestamps();
