@@ -45,8 +45,9 @@
 										{{-- <th>Idemprendimiento</th> --}}
 										<th>Nombre</th>
 										<th>Descripcion</th>
+                                        <th>tipo_emprendimiento</th>
                                         <th>Distrito</th>
-                                        <th></th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -57,6 +58,7 @@
 											{{-- <td>{{ $emprendimiento->idEmprendimiento }}</td> --}}
 											<td>{{ $emprendimiento->nombreEmprendimiento }}</td>
 											<td>{{ $emprendimiento->descripcionEmprendimiento }}</td>
+                                            <td>{{ $emprendimiento->tipo_emprendimiento }}</td>
                                             <td>{{ $emprendimiento->distrito->nombreDistrito }}</td>
 
                                             <td>
@@ -107,8 +109,17 @@ const searchEmployees = () => {
         return;
     }
 
+    
+    
+    
+    
+
+
+    
+    
+    
     tableRows.forEach((row) => {
-        const nombreDistritoCell = row.querySelector('td:nth-child(4)'); // Suponiendo que el campo NombreDistrito es la quinta columna (índice 4)
+        const nombreDistritoCell = row.querySelector('td:nth-child(5)'); // Suponiendo que el campo NombreDistrito es la quinta columna (índice 4)
         if (nombreDistritoCell) {
             const nombreDistrito = nombreDistritoCell.innerText.toLowerCase();
             if (nombreDistrito.includes(searchTerm)) {
@@ -118,6 +129,14 @@ const searchEmployees = () => {
             }
         }
     });
+
+
+
+
+
+
+
+
 
     // Mostrar un mensaje si no se encontraron resultados
     const resultsFound = Array.from(tableRows).some((row) => row.style.display === 'table-row');

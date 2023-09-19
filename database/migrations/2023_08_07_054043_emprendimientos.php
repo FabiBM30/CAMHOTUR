@@ -18,6 +18,7 @@ class Emprendimientos extends Migration
             $table->bigIncrements('idEmprendimiento');
             $table->bigInteger('id_Distrito')->unsigned();
             $table->string('nombreEmprendimiento');
+            $table->string('tipo_emprendimiento');
             $table->string('descripcionEmprendimiento');
             $table->timestamps();
 

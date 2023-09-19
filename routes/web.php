@@ -34,6 +34,12 @@ Route::resource('clientes', App\Http\Controllers\ClienteController::class)->midd
 
 //RUTA FILTRO DE PRUEBA
 
+//Route::get('tipoFiltrado/{tipo}', [App\Http\Controllers\EmprendimientoController::class, 'filtrarPorTipo'])->middleware('auth')->name('tipoFiltrado');
+Route::get('filtrar-emprendimientos/{tipo}', [App\Http\Controllers\EmprendimientoController::class, 'filtrarEmprendimientosPorTipo'])->name('filtrar-emprendimientos');
+
+//Route::get('filtrar-emprendimientos/{tipo}', 'EmprendimientoController@filtrarEmprendimientosPorTipo')->name('filtrar-emprendimientos');
+
+
 //Route::get('filtrar-emprendimientos', [App\Http\Controllers\EmprendimientoController::class, 'filtrar'])->middleware('auth')->name('filtrar-emprendimientos');
 //Route::get('emprendimientos.index', [App\Http\Controllers\EmprendimientoController::class, 'index'])->middleware('auth')->name('emprendimientos.index');
 
