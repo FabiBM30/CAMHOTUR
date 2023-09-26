@@ -24,9 +24,9 @@
             {!! $errors->first('nombreEmprendimiento', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('tipo_emprendimiento') }}
-            {{ Form::select('tipo_emprendimiento', ['' => 'Seleccione:', 'Productos' => 'Productos', 'Servicios' => 'Servicios', 'Turismo' => 'Turismo'], $emprendimiento->tipo_emprendimiento, ['class' => 'form-control', 'id' => 'tipo_emprendimiento', 'onchange' => 'cambioUnidad();', 'required']) }}
-            {!! $errors->first('tipo_emprendimiento', '<div class="invalid-feedback">Campo Obligatorio</div>') !!}
+            {{ Form::label('Tipo de emprendimiento') }}
+            {{ Form::select('Tipo de emprendimiento', ['' => 'Seleccione:', 'Productos' => 'Productos', 'Servicios' => 'Servicios', 'Turismo' => 'Turismo'], $emprendimiento->tipo_emprendimiento, ['class' => 'form-control', 'id' => 'tipo_emprendimiento', 'onchange' => 'cambioUnidad();', 'required']) }}
+            {!! $errors->first('Tipo de emprendimiento', '<div class="invalid-feedback">Campo Obligatorio</div>') !!}
         </div>
       
 

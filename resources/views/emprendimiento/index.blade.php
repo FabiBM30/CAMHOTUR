@@ -45,7 +45,7 @@
 										{{-- <th>Idemprendimiento</th> --}}
 										<th>Nombre</th>
 										<th>Descripcion</th>
-                                        <th>tipo_emprendimiento</th>
+                                        <th>Tipo de emprendimiento</th>
                                         <th>Distrito</th>
                                         
                                     </tr>
@@ -199,7 +199,7 @@ searchInput.addEventListener('input', searchEmployees);
                             icon: 'error',
                         });
                     }
-                })
+                })   
                 .catch(error => {
                     console.error('Error:', error);
                     Swal.fire({
