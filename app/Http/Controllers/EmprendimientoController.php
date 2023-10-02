@@ -53,12 +53,14 @@ class EmprendimientoController extends Controller
      */
     public function store(Request $request)
     {
+       
         request()->validate(Emprendimiento::$rules);
 
         $emprendimiento = Emprendimiento::create($request->all());
-
+        //dd($request);
         return redirect()->route('emprendimientos.index')
             ->with('success', 'Emprendimiento created successfully.');
+
     }
 
     public function filtrarEmprendimientosPorTipo($tipo)
