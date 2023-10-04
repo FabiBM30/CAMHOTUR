@@ -43,6 +43,7 @@ class DistritoController extends Controller
      */
     public function store(Request $request)
 {
+    // dd($request);
     request()->validate(Distrito::$rules);
     $distritoData = request()->except('_token');
     
