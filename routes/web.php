@@ -32,6 +32,10 @@ Route::resource('empresarios', App\Http\Controllers\EmpresarioController::class)
 //RUTA CLIENTES
 Route::resource('clientes', App\Http\Controllers\ClienteController::class)->middleware('auth');
 
+//RUTA CATALOGO
+Route::resource('catalogos', App\Http\Controllers\CatalogoController::class)->middleware('auth');
+
+
 //RUTA FILTRO DE PRUEBA
 
 //Route::get('tipoFiltrado/{tipo}', [App\Http\Controllers\EmprendimientoController::class, 'filtrarPorTipo'])->middleware('auth')->name('tipoFiltrado');
