@@ -36,9 +36,9 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Idcatalogos</th>
-										<th>Nombrecatalogos</th>
-										<th>Id Empre</th>
+										{{-- <th>Idcatalogos</th> --}}
+										<th>Producto</th>
+										<th>Emprendimiento</th>
 										<th>Cantidad</th>
 										<th>Estado</th>
 										<th>Foto</th>

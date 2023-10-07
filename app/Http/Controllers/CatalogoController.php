@@ -5,114 +5,94 @@ namespace App\Http\Controllers;
 use App\Catalogo;
 use App\Emprendimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
-/**
- * Class CatalogoController
- * @package App\Http\Controllers
- */
 class CatalogoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $catalogos = Catalogo::paginate();
         $emprendimientos = Emprendimiento::all();
-        return view('catalogo.index', compact('catalogos','emprendimientos'))
+        return view('catalogo.index', compact('catalogos', 'emprendimientos'))
             ->with('i', (request()->input('page', 1) - 1) * $catalogos->perPage());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $catalogo = new Catalogo();
         $emprendimientos = Emprendimiento::all();
-        return view('catalogo.create', compact('catalogo','emprendimientos'));
+        return view('catalogo.create', compact('catalogo', 'emprendimientos'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        request()->validate(Catalogo::$rules);
-        $catalogoData = request()->except('_token');
+        $request->validate([
+            'nombreCatalogos' => 'required',
+            'cantidad' => 'required|integer',
+            'estado' => 'required',
+            'nuevaImagen' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $catalogoData = $request->except('_token');
+        $catalogoData['id_Empre'] = $request->input('id_Empren'); // Asigna el valor del emprendimiento seleccionado
+
 
         if ($request->hasFile('nuevaImagen')) {
             $file = $request->file('nuevaImagen');
-            $filename = uniqid() . '.png'; 
-            $file->storeAs('public/image', $filename);
-            $distritoData['foto'] = $filename;
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/images', $filename);
+            $catalogoData['foto'] = $filename;
         }
 
         Catalogo::create($catalogoData);
         return redirect()->route('catalogos.index')
-            ->with('success', 'Catalogo created successfully.');
+            ->with('success', 'Catalogo creado exitosamente.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $catalogo = Catalogo::find($id);
-
         return view('catalogo.show', compact('catalogo'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $catalogo = Catalogo::find($id);
-
         return view('catalogo.edit', compact('catalogo'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Catalogo $catalogo
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Catalogo $catalogo)
     {
-        request()->validate(Catalogo::$rules);
+        $request->validate([
+            'nombreCatalogos' => 'required',
+            'cantidad' => 'required|integer',
+            'estado' => 'required',
+            'nuevaImagen' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-        $catalogo->update($request->all());
+        $catalogoData = $request->except('_token');
 
+        if ($request->hasFile('nuevaImagen')) {
+            $file = $request->file('nuevaImagen');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/images', $filename);
+            $catalogoData['foto'] = $filename;
+        }
+
+        $catalogo->update($catalogoData);
         return redirect()->route('catalogos.index')
-            ->with('success', 'Catalogo updated successfully');
+            ->with('success', 'Catalogo actualizado exitosamente.');
     }
 
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
     public function destroy($id)
     {
-        $catalogo = Catalogo::find($id)->delete();
+        $catalogo = Catalogo::find($id);
+        if ($catalogo) {
+            Storage::delete('public/images/' . $catalogo->foto);
+            $catalogo->delete();
+        }
 
         return redirect()->route('catalogos.index')
-            ->with('success', 'Catalogo deleted successfully');
+            ->with('success', 'Catalogo eliminado exitosamente.');
     }
 }
