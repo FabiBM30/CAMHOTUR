@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										{{-- <th>Idcatalogos</th> --}}
+										 <th>Idcatalogos</th> 
 										<th>Producto</th>
 										<th>Emprendimiento</th>
 										<th>Cantidad</th>
