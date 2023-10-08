@@ -40,7 +40,7 @@ class CatalogoController extends Controller
         if ($request->hasFile('nuevaImagen')) {
             $file = $request->file('nuevaImagen');
             $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/images', $filename);
+            $file->storeAs('public/image', $filename);
             $catalogoData['foto'] = $filename;
         }
 
@@ -58,7 +58,8 @@ class CatalogoController extends Controller
     public function edit($id)
     {
         $catalogo = Catalogo::find($id);
-        return view('catalogo.edit', compact('catalogo'));
+        $emprendimientos = Emprendimiento::all();
+        return view('catalogo.edit', compact('catalogo','emprendimientos'));
     }
 
     public function update(Request $request, Catalogo $catalogo)
@@ -75,7 +76,7 @@ class CatalogoController extends Controller
         if ($request->hasFile('nuevaImagen')) {
             $file = $request->file('nuevaImagen');
             $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/images', $filename);
+            $file->storeAs('public/image', $filename);
             $catalogoData['foto'] = $filename;
         }
 
@@ -88,7 +89,7 @@ class CatalogoController extends Controller
     {
         $catalogo = Catalogo::find($id);
         if ($catalogo) {
-            Storage::delete('public/images/' . $catalogo->foto);
+            Storage::delete('public/image/' . $catalogo->foto);
             $catalogo->delete();
         }
 
