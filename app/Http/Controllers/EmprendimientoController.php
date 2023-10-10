@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Emprendimiento;
 use App\Distrito;
+use App\Catalogo;
 use Illuminate\Http\Request;
 
 /**
@@ -72,6 +73,15 @@ class EmprendimientoController extends Controller
     return view('emprendimiento.filtered_results', compact('emprendimientosFiltrados', 'tipo'));
 
 }
+
+public function mostrarCatalogos($idEmprendimiento)
+{
+    $emprendimiento = Emprendimiento::find($idEmprendimiento);
+    $catalogos = $emprendimiento->catalogos;
+    return view('emprendimiento.mostrar_catalogos', compact('emprendimiento', 'catalogos'));
+}
+
+
     /**
      * Display the specified resource.
      *

@@ -40,6 +40,13 @@ class Catalogo extends Model
      */
     protected $fillable = ['idCatalogos','nombreCatalogos','id_Empre','cantidad','estado','foto'];
 
+// En el modelo Emprendimiento
+// En el modelo Catalogo
+public function emprendimiento()
+{
+    return $this->belongsTo(Emprendimiento::class, 'id_Empre');
+}
+
 
 
 }
