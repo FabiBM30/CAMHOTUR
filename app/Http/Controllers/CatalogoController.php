@@ -17,6 +17,40 @@ class CatalogoController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $catalogos->perPage());
     }
 
+
+
+
+    public function indexPorEmprendimiento($idEmprendimiento)
+{
+    // Busca el emprendimiento por su id
+    $emprendimiento = Emprendimiento::find($idEmprendimiento);
+
+    // Verifica si el emprendimiento existe
+    if ($emprendimiento) {
+        // Consulta explícita para obtener los catálogos asociados a este emprendimiento
+        $catalogos = Catalogo::where('id_Empre', $idEmprendimiento)->get();
+
+        // Muestra los resultados en el log
+        \Illuminate\Support\Facades\Log::info($catalogos);
+
+        // Retorna la vista con los datos necesarios
+        return view('catalogo.index_por_emprendimiento', compact('catalogos', 'emprendimiento'));
+    } else {
+        // Redirige en caso de que el emprendimiento no exista
+        return redirect('/')->with('error', 'El emprendimiento no existe');
+    }
+}
+
+
+
+
+
+
+
+
+
+   
+
     public function create()
     {
         $catalogo = new Catalogo();

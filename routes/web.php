@@ -35,6 +35,10 @@ Route::resource('clientes', App\Http\Controllers\ClienteController::class)->midd
 //RUTA CATALOGO
 Route::resource('catalogos', App\Http\Controllers\CatalogoController::class)->middleware('auth');
 
+// En web.php
+
+Route::get('mostrar-catalogos/{idEmprendimiento}', [App\Http\Controllers\EmprendimientoController::class, 'mostrarCatalogos'])->name('mostrar.catalogos');
+Route::get('catalogos-por-emprendimiento/{idEmprendimiento}', [App\Http\Controllers\CatalogoController::class, 'indexPorEmprendimiento'])->name('catalogos.por.emprendimiento');
 
 //RUTA FILTRO DE PRUEBA
 

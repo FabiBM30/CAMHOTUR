@@ -53,7 +53,7 @@
                                             
 											<td>{{ $catalogo->idCatalogos }}</td>
 											<td>{{ $catalogo->nombreCatalogos }}</td>
-											<td>{{ $catalogo->id_Empre }}</td>
+											<td>{{ $catalogo->emprendimiento->nombreEmprendimiento }}</td>
 											<td>{{ $catalogo->cantidad }}</td>
 											<td>{{ $catalogo->estado }}</td>
 											

@@ -41,4 +41,11 @@ class Emprendimiento extends Model
         return $this->hasOne('App\Distrito', 'id', 'id_Distrito');
     }
 
+
+public function catalogos()
+{
+    return $this->hasMany(Catalogo::class, 'id_Empre');
+}
+
+
 }

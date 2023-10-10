@@ -23,10 +23,10 @@
             {!! $errors->first('cantidad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('estado') }}
-            {{ Form::text('estado', $catalogo->estado, ['class' => 'form-control' . ($errors->has('estado') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
-            {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+                                {{ Form::label('estado', 'Estado') }}
+                                {{ Form::select('estado', ['activo' => 'Activo', 'inactivo' => 'Inactivo'], $catalogo->estado, ['class' => 'form-control', 'placeholder' => 'Seleccione Estado']) }}
+                                {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
+                            </div>
         <div class="form-group">
    
    {{ Form::label('foto  ', 'Seleccione una imagen...') }}

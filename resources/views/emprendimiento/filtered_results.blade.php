@@ -16,7 +16,10 @@
                         @else
                             <ul class="list-group">
                                 @foreach($emprendimientosFiltrados as $emprendimiento)
-                                    <li class="list-group-item">{{ $emprendimiento->nombreEmprendimiento }}</li>
+                                    <li class="list-group-item">{{ $emprendimiento->nombreEmprendimiento }}
+                                    <a href="{{ route('catalogos.por.emprendimiento', $emprendimiento->idEmprendimiento) }}" class="btn btn-info btn-sm">Ver Catálogos</a>
+    
+                                    </li>
                                 @endforeach
                             </ul>
                         @endif

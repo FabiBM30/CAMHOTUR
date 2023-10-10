@@ -22,6 +22,10 @@ class Catalogos extends Migration
             $table->string('estado');
             $table->string('foto');
             $table->timestamps();
+
+                // Clave foránea
+                $table->foreign('id_Empre')->references('idEmprendimiento')->on('emprendimientos');
+       
         });
     }
 
