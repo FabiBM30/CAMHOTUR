@@ -35,12 +35,10 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
+                                        <th>N#</th>
 										<th>Nombre</th>
-                                        <th>Descripcion</th>
-
-                                        <th>Imagen </th>
+                                        <th>Descripción</th>
+                                        <th>Imagen</th>
                                         <th></th>
                                     </tr>
                                 </thead>

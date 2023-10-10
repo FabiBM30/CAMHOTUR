@@ -40,12 +40,12 @@
                                                     <thead class="thead">
                                                         <tr>
                                         
-                                        <th>n#</th>
+                                        <th>N#</th>
                                         
 										{{-- <th>Idemprendimiento</th> --}}
 										<th>Nombre</th>
-										<th>Descripcion</th>
-                                        <th>Tipo de emprendimiento</th>
+										<th>Descripción</th>
+                                        <th>Tipo de Emprendimiento</th>
                                         <th>Distrito</th>
                                         
                                     </tr>

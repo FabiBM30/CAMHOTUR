@@ -126,16 +126,16 @@ Generic layout (demo looks)
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
-.encargados{
+.encargados {
+  max-width: 600px;
+  margin: 0 auto; /* Establece el margen izquierdo y derecho a "auto" para centrar horizontalmente */
   display: grid;
-  justify-content: center;
-  max-width: 900px;
-  align-items: center;
-  margin-inline: auto;
-  padding-inline: 24px;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
+
+/* Añade otros estilos necesarios */
+
 
 
 @media screen and (max-width: 960px) {
@@ -354,7 +354,7 @@ Generic layout (demo looks)
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" style="justify-content: center;">
-    <img src="{{ asset('images/home/Ho.jpg') }}" alt="Slide 1">
+    <img src="{{ asset('/imgs/pain1.png') }}" alt="Slide 1">
     </div>
     <div class="carousel-item" style="justify-content: center; width" >
       <img src="images/Siavem1.webp" alt="Slide 2">
@@ -376,7 +376,28 @@ Generic layout (demo looks)
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<br>
+<br>
+<br>
+<br>
+</section>
+<!-- QUE ES CAMHOTUR -->
+<section class="container">
+<h1 class="text-center"><strong>Qué es CAMHOTUR</strong></h1>
+<p>Descripcion General.</p>
+</section>
+<br>
+<br>
+<br>
+<br>
+  <!-- Misión, Visión y Valores -->
+  <section class="container">
+    <h1 class="text-center"><strong>Misión, Visión y Valores</strong></h1>
+    <p>Tu contenido sobre la misión, visión y valores.</p>
+</section>
   </div>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -387,23 +408,11 @@ Generic layout (demo looks)
     <article>
       <div class="article-wrapper" >
         <figure class="encargado-figure">
-          <img src="images/USUARIO2.png" alt="" />
+          <img src="/imgs/pain1.png" alt="" />
         </figure>
         <div class="article-body">
-          <h2>Alcaldía Santa Cruz</h2>
-          <p>Mtr. Jorge Alfaro Orias</p>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="article-wrapper">
-        <figure class="encargado-figure">
-          <img src="images/USUARIO1.png" alt="" />
-        </figure>
-        <div class="article-body">
-          <h2>Unidad de Transporte</h2>
-          <p>Lic. Amalia Gutierrez</p>
+          <h2>Director de CAMHOTUR</h2>
+          <p>Ezequiel Aguirre Pérez</p>
         </div>
       </div>
     </article>
@@ -414,14 +423,14 @@ Generic layout (demo looks)
           <img src="images/USUARIO2.png" alt="" />
         </figure>
         <div class="article-body">
-          <h2>Unidad de informática</h2>
-          <p>Mtr. Manrique Solorzano</p>
+          <h2>Asociado a CAMHOTUR</h2>
+          <p>Carlos Ávila Mata</p>
         </div>
       </div>
     </article>
   </section>
 
- 
+
 <br>
 <br>
 <br>
@@ -442,19 +451,7 @@ class="text-center" > <strong>Entidades Encargadas</strong></h1>
       <img src="images/Sin título-62.jpg" alt="" />
     </figure>
     <div class="article-body">
-      <h2>Universidad Nacional</h2>
-    </div>
-  </div>
-</article>
-
-
-  <article>
-  <div class="article-wrapper">
-    <figure class="logo-figure">
-      <img src="images/aa.png" alt="" />
-    </figure>
-    <div class="article-body">
-      <h2>Sede regional Chorotega</h2>
+      <h2>Universidad Nacional Sede Regional Chorotega</h2>
     </div>
   </div>
 </article>
@@ -466,7 +463,7 @@ class="text-center" > <strong>Entidades Encargadas</strong></h1>
       <img src="images/Sin título-51.jpg" alt="" />
     </figure>
     <div class="article-body">
-      <h2>Municipalidad de Santa Cruz</h2>
+      <h2>Camara Hojancheña de Turismo</h2>
     </div>
   </div>
 </article>
@@ -495,8 +492,8 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
         <img src="images/Daniela.jpeg" alt="" />
       </figure>
       <div class="article-body">
-        <h2>BACK-END</h2>
-        <p> Daniela Chaves Aguirre
+        <h2>FULL-STACK</h2>
+        <p> Fabián Esteban Bolaños Morales
         </p>
         
       </div>
@@ -509,8 +506,8 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
         <img src="images\Ariana.webp" alt="" />
       </figure>
       <div class="article-body">
-        <h2>FRONT-END</h2>
-        <p> Ariana Leal Villafuerte
+        <h2>FRONT-END y QA</h2>
+        <p> Keiry Gabriela Juárez Hernández
         </p>
        
       </div>
@@ -523,8 +520,8 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
         <img src="images/Yustin.webp" alt="" />
       </figure>
       <div class="article-body">
-        <h2>BACK-END</h2>
-        <p> Yustin López  Salas
+        <h2>FULL-STACK</h2>
+        <p> Solmahr Jored Leal Rivas
         </p>
        
       </div>
@@ -537,14 +534,66 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
         <img src="images/Abigail.webp" alt="" />
       </figure>
       <div class="article-body">
-        <h2>FRONT-END</h2>
-        <p> Abigail Espinoza Herrera
+        <h2>FULL-STACK</h2>
+        <p> Marvin Josue Alvarado López
         </p>
         
       </div>
+      <br>
+      <br>
+      <br>
+    </section>
+      <!-- Zona Turística Potencial -->
+<section class="container">
+    <h1 class="text-center"><strong>Zona Turística Potencial</strong></h1>
+    <p>Tu contenido sobre la zona turística potencial.</p>
+  </section>
+  
+
     </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="text-success"><span class="text-white">CAMH</span>OTUR</h1>
+                </a>
+              
+                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Síguenos</h6>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-outline-primary btn-square" href="https://www.facebook.com/profile.php?id=100064024153850"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            
+           
+            <div class="col-lg-3 col-md-6 mb-5 ml-auto">
+                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contáctenos</h5>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Hojancha, Guanacaste</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+(506) 8633-6709</p>
+                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white-50">Copyright &copy; <a href="#">CAMHOTUR</a>.Nos reservamos todos los derechos.</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <p class="m-0 text-white-50"><a href="https://htmlcodex.com"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
   </article>
 </body>
 </html>
 
 @endsection
+
