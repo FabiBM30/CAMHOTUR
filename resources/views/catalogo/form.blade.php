@@ -3,12 +3,13 @@
         
     
         <div class="form-group">
-            {{ Form::label('nombreCatalogos') }}
-            {{ Form::text('nombreCatalogos', $catalogo->nombreCatalogos, ['class' => 'form-control' . ($errors->has('nombreCatalogos') ? ' is-invalid' : ''), 'placeholder' => 'Nombrecatalogos']) }}
+            {{ Form::label('Producto') }}
+            {{ Form::text('nombreCatalogos', $catalogo->nombreCatalogos, ['class' => 'form-control' . ($errors->has('nombreCatalogos') ? ' is-invalid' : ''), 'placeholder' => 'Nombre del producto...']) }}
             {!! $errors->first('nombreCatalogos', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        <br>
         <div class="form-group">
-                <strong>Emprendimiento: </strong>
+                <strong>Emprendimiento al que pertenece: </strong>
                 <br>
                 <select class="form-control" name="id_Empren" id="initialServers" multiple="multiple">
                 @foreach ($emprendimientos as $emprendimiento_s)
@@ -17,20 +18,22 @@
                 </select>
 
             </div>
+            <br>
         <div class="form-group">
-            {{ Form::label('cantidad') }}
-            {{ Form::text('cantidad', $catalogo->cantidad, ['class' => 'form-control' . ($errors->has('cantidad') ? ' is-invalid' : ''), 'placeholder' => 'Cantidad']) }}
+            {{ Form::label('Precio') }}
+            {{ Form::text('cantidad', $catalogo->cantidad, ['class' => 'form-control' . ($errors->has('cantidad') ? ' is-invalid' : ''), 'placeholder' => 'Precio del producto...']) }}
             {!! $errors->first('cantidad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        <br>
         <div class="form-group">
                                 {{ Form::label('estado', 'Estado') }}
                                 {{ Form::select('estado', ['activo' => 'Activo', 'inactivo' => 'Inactivo'], $catalogo->estado, ['class' => 'form-control', 'placeholder' => 'Seleccione Estado']) }}
                                 {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
                             </div>
+                            <br>
         <div class="form-group">
    
-   {{ Form::label('foto  ', 'Seleccione una imagen...') }}
-   <br>
+   {{ Form::label('foto  ', 'Seleccione una imagen para el producto...') }}
    <img src="{{ asset('storage/'.$catalogo->foto) }}" width="300" alt="">
    <br>
    {{ Form::file('nuevaImagen', ['class' => 'form-control']) }}
@@ -38,7 +41,7 @@
 
 
    </div>
-
+<br>
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">Listo</button>

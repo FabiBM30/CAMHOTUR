@@ -91,8 +91,15 @@
             </div>
         </nav>  -->
    <div id = "app"> 
+
+    <style>
+        .navbar-custom {
+          background-color: #6fba23; /* Puedes ajustar el color cambiando el valor hexadecimal */
+        }
+      </style>
+
     @auth       
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ url('/home') }}">CAMHOTUR</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,18 +114,18 @@
           <a class="nav-link" href="/emprendimientos">Emprendimientos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/catalogos">Catalogos</a>
+          <a class="nav-link" href="/catalogos">Catálogos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-              Tipo de Emprendimiento
+              Tipos de Emprendimiento y Catálogos
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Productos') }}">Productos</a></li>
             <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Servicios') }}">Servicios</a></li>
             <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Turismo') }}">Turismo</a></li>            
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#"></a></li>
           </ul>
       </li>
       

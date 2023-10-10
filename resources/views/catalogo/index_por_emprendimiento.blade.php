@@ -25,11 +25,11 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nombre del Catálogo</th>
-                                        <th>Cantidad</th>
+                                        <th>N#</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
                                         <th>Estado</th>
-                                        <th>Foto</th>
+                                        <th>Imagen</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -50,6 +50,12 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="row mt-0">
+                            <div class="col-md-0 offset-md-0">
+                                </button>
+                                <a class="btn btn-danger" href="{{ route('catalogos.index') }}"> Atrás</a>
+                            </div>
                         </div>
                     </div>
                 </div>
