@@ -7,7 +7,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../resources/css/Home.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <title>Home</title>
 <style> 
   Body div .main-home h1 {
@@ -150,8 +151,8 @@ Generic layout (demo looks)
 @container card (min-width: 380px) {
   .article-wrapper {
     display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 16px;
+    grid-template-columns: 100px 5fr;
+    gap: 26px;
   }
   .article-body {
     padding-left: 0;
@@ -354,16 +355,16 @@ Generic layout (demo looks)
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" style="justify-content: center;">
-    <img src="{{ asset('/imgs/pain1.png') }}" alt="Slide 1">
+    <img src="{{ asset('images') }}" alt="Slide 1">
     </div>
     <div class="carousel-item" style="justify-content: center; width" >
-      <img src="images/Siavem1.webp" alt="Slide 2">
+      <img src={{ asset('images')}} alt="Slide 2">
     </div>
     <div class="carousel-item" style="justify-content: center;">
-      <img src="images/Siavem2.webp" alt="Slide 3">
+      <img src={{ asset('images')}} alt="Slide 3">
     </div> 
     <div class="carousel-item" style="justify-content: center;">
-      <img src="images/MUNICIPALIDAD.webp" alt="Slide 4">
+      <img src={{ asset('images')}} alt="Slide 4">
     </div> 
     <!-- Agrega más elementos carousel-item según tus necesidades -->
   </div>
@@ -391,10 +392,72 @@ Generic layout (demo looks)
 <br>
 <br>
   <!-- Misión, Visión y Valores -->
-  <section class="container">
+  <title>Misión, Visión y Valores</title>
+</head>
+<body>
+  <div class="container">
     <h1 class="text-center"><strong>Misión, Visión y Valores</strong></h1>
-    <p>Tu contenido sobre la misión, visión y valores.</p>
-</section>
+<br>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body" style="line-height: 2.5;">
+            <h2 class="card-title">Misión</h2>
+            <p class="card-text">"Ofrecer al viajero nacional e internacional una oferta turística acorde con los estándares de calidad, 
+              sostenibilidad, ambiental, tecnológico y accesibilidad."</p>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body" style="line-height: 2.5;">
+            <h2 class="card-title">Visión</h2>
+            <p class="card-text">"Desarrollar la oferta turística y el emprendimiento con el fin de posicionar al cantón de 
+              Hojancha como destino turístico a nivel nacional."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Valores</h2>
+            <ul class="list-unstyled">
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">H</span><span style="font-size: 16px;">UMILDAD</span>
+              </li>
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">O</span><span style="font-size: 16px;">PTIMISMO</span>
+              </li>
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">J</span><span style="font-size: 16px;">OVIALIDAD</span>
+              </li>
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">A</span><span style="font-size: 16px;">MISTAD</span>
+              </li>
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">N</span><span style="font-size: 16px;">ATURALEZA</span>
+              </li>
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">C</span><span style="font-size: 16px;">ALIDAD</span>
+              </li>
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">H</span><span style="font-size: 16px;">ONESTIDAD</span>
+              </li>
+              <li>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">A</span><span style="font-size: 16px;">MOR</span>
+              </li>
+            </ul>
+          </div>
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 <br>
 <br>
@@ -420,7 +483,7 @@ Generic layout (demo looks)
     <article>
       <div class="article-wrapper">
         <figure class="encargado-figure">
-          <img src="images/USUARIO2.png" alt="" />
+          <img src="{{ asset('images/Carlos Avila.jpg') }}" alt="" class="img-fluid" />
         </figure>
         <div class="article-body">
           <h2>Asociado a CAMHOTUR</h2>
@@ -428,6 +491,8 @@ Generic layout (demo looks)
         </div>
       </div>
     </article>
+    
+    
   </section>
 
 
@@ -443,35 +508,41 @@ class="text-center" > <strong>Entidades Encargadas</strong></h1>
 <br>
 <br>
 </section>
-<section class="encargados">
-
-<article>
-  <div class="article-wrapper">
-    <figure class="logo-figure">
-      <img src="images/Sin título-62.jpg" alt="" />
-    </figure>
-    <div class="article-body">
-      <h2>Universidad Nacional Sede Regional Chorotega</h2>
-    </div>
+<section class="container">
+  <div style="display: inline-block; margin-right: 20px;">
+    <article class="article-wrapper">
+      <figure class="logo-figure">
+        <img src="{{ asset('images/Sede Regional.jpg') }}" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Universidad Nacional Sede Regional Chorotega</h2>
+      </div>
+    </article>
   </div>
-</article>
 
-
-  <article>
-  <div class="article-wrapper">
-    <figure class="shield-figure">
-      <img src="images/Sin título-51.jpg" alt="" />
-    </figure>
-    <div class="article-body">
-      <h2>Camara Hojancheña de Turismo</h2>
-    </div>
+  <div style="display: inline-block; margin-right: 20px;">
+    <article class="article-wrapper">
+      <figure class="logo-figure">
+        <img src="{{ asset('images/CARRERA.jpg') }}" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Carrera de Ingenieria en Sistemas de Informacion</h2>
+      </div>
+    </article>
   </div>
-</article>
 
-
-
- 
+  <div style="display: inline-block;">
+    <article class="article-wrapper">
+      <figure class="shield-figure">
+        <img src="{{ asset('images/2.png') }}" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Cámara Hojancheña de Turismo</h2>
+      </div>
+    </article>
+  </div>
 </section>
+
 <br>
 <br>
 <br>
@@ -489,7 +560,7 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <article>
     <div class="article-wrapper">
       <figure>
-        <img src="images/Daniela.jpeg" alt="" />
+        <img src="{{ asset('images/Fabian.jpg') }}" alt="" />
       </figure>
       <div class="article-body">
         <h2>FULL-STACK</h2>
@@ -503,7 +574,7 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <article>
     <div class="article-wrapper">
       <figure>
-        <img src="images\Ariana.webp" alt="" />
+        <img src="{{ asset('images/Gaby.jpg') }}" alt="" />
       </figure>
       <div class="article-body">
         <h2>FRONT-END y QA</h2>
@@ -517,7 +588,7 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <article>
     <div class="article-wrapper">
       <figure>
-        <img src="images/Yustin.webp" alt="" />
+        <img src="{{ asset('images/Solmahr.jpg') }}" alt="" />
       </figure>
       <div class="article-body">
         <h2>FULL-STACK</h2>
@@ -531,7 +602,7 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <article>
     <div class="article-wrapper">
       <figure>
-        <img src="images/Abigail.webp" alt="" />
+        <img src="{{ asset('images/Marvin.jpg') }}" alt="" />
       </figure>
       <div class="article-body">
         <h2>FULL-STACK</h2>
@@ -597,3 +668,6 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
 
 @endsection
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
