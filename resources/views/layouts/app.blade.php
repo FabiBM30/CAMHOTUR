@@ -94,32 +94,34 @@
 
     <style>
         .navbar-custom {
-          background-color: #6fba23; /* Puedes ajustar el color cambiando el valor hexadecimal */
+          background-color: #8eda43; /* Puedes ajustar el color cambiando el valor hexadecimal */
         }
       </style>
 
     @auth       
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-custom" style="height: 90px;">
+
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ url('/home') }}">CAMHOTUR</a>
+    <a class="navbar-brand" href="{{ url('/home') }}" style="font-family: 'cursive', sans-serif;">C A M H O T U R</a>
+
+
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/distritos">Distritos</a>
+          <a class="nav-link" href="/distritos"><strong>Distritos</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/emprendimientos">Emprendimientos</a>
+          <a class="nav-link" href="/emprendimientos"><strong>Emprendimientos</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/catalogos">Catálogos</a>
+          <a class="nav-link" href="/catalogos"><strong>Catálogos</strong></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-              Tipos de Emprendimiento y Catálogos
-          </a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"><strong>Tipos de Emprendimiento y Catálogos</strong></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Productos') }}">Productos</a></li>
             <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Servicios') }}">Servicios</a></li>

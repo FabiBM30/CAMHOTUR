@@ -355,16 +355,16 @@ Generic layout (demo looks)
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" style="justify-content: center;">
-    <img src="{{ asset('images') }}" alt="Slide 1">
+    <img src="{{ asset('images/313874_matambU.webp') }}" alt="Slide 1">
     </div>
     <div class="carousel-item" style="justify-content: center; width" >
-      <img src={{ asset('images')}} alt="Slide 2">
+      <img src={{ asset('images/Aerial_view_of_Carrillo.png')}} alt="Slide 2">
     </div>
     <div class="carousel-item" style="justify-content: center;">
-      <img src={{ asset('images')}} alt="Slide 3">
+      <img src={{ asset('images/HOJANCHA.PNG')}} alt="Slide 3">
     </div> 
     <div class="carousel-item" style="justify-content: center;">
-      <img src={{ asset('images')}} alt="Slide 4">
+      <img src={{ asset('images/IMG_4388UU.webp')}} alt="Slide 4">
     </div> 
     <!-- Agrega más elementos carousel-item según tus necesidades -->
   </div>
@@ -483,7 +483,7 @@ Generic layout (demo looks)
     <article>
       <div class="article-wrapper">
         <figure class="encargado-figure">
-          <img src="{{ asset('images/Carlos Avila.jpg') }}" alt="" class="img-fluid" />
+          <img src="{{ asset('images/CarlosAvila2.webp') }}" alt="" class="img-fluid" />
         </figure>
         <div class="article-body">
           <h2>Asociado a CAMHOTUR</h2>
