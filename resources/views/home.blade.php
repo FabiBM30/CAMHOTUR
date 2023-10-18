@@ -355,16 +355,16 @@ Generic layout (demo looks)
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" style="justify-content: center;">
-    <img src="{{ asset('images/313874_matambU.webp') }}" alt="Slide 1">
+      {{-- <img src="{{ asset('images') }}" alt="Slide 1"> --}}
     </div>
     <div class="carousel-item" style="justify-content: center; width" >
-      <img src={{ asset('images/Aerial_view_of_Carrillo.png')}} alt="Slide 2">
+      {{-- <img src={{ asset('images')}} alt="Slide 2"> --}}
     </div>
     <div class="carousel-item" style="justify-content: center;">
-      <img src={{ asset('images/HOJANCHA.PNG')}} alt="Slide 3">
+      {{-- <img src={{ asset('images')}} alt="Slide 3"> --}}
     </div> 
     <div class="carousel-item" style="justify-content: center;">
-      <img src={{ asset('images/IMG_4388UU.webp')}} alt="Slide 4">
+      {{-- <img src={{ asset('images')}} alt="Slide 4"> --}}
     </div> 
     <!-- Agrega más elementos carousel-item según tus necesidades -->
   </div>
@@ -383,10 +383,11 @@ Generic layout (demo looks)
 <br>
 </section>
 <!-- QUE ES CAMHOTUR -->
-<section class="container">
-<h1 class="text-center"><strong>Qué es CAMHOTUR</strong></h1>
-<p>Descripcion General.</p>
+<section class="container" style="font-family: Arial, sans-serif;">
+  <h1 class="text-center"><strong>Qué es CAMHOTUR</strong></h1>
+  <p>Descripción General.</p>
 </section>
+
 <br>
 <br>
 <br>
@@ -396,68 +397,64 @@ Generic layout (demo looks)
 </head>
 <body>
   <div class="container">
-    <h1 class="text-center"><strong>Misión, Visión y Valores</strong></h1>
-<br>
+    <h1 class="text-center" style="font-size: 24px; font-family: Arial;"><strong>Misión, Visión y Valores</strong></h1>
+    <br>
     <div class="row">
       <div class="col-md-4">
         <div class="card">
-          <div class="card-body" style="line-height: 2.5;">
-            <h2 class="card-title">Misión</h2>
-            <p class="card-text">"Ofrecer al viajero nacional e internacional una oferta turística acorde con los estándares de calidad, 
-              sostenibilidad, ambiental, tecnológico y accesibilidad."</p>
+          <div class="card-body" style="line-height: 2; border: 5px solid rgba(0, 0, 0, 0.125);">
+            <h2 class="card-title" style="font-size: 35px;">Misión</h2>
+            <p class="card-text" style="font-size: 20px;">"Ofrecer al viajero nacional e internacional una oferta turística acorde con los estándares de calidad, sostenibilidad, ambiental, tecnológico y accesibilidad."</p>
           </div>
         </div>
       </div>
-      
-
+  
       <div class="col-md-4">
         <div class="card">
-          <div class="card-body" style="line-height: 2.5;">
-            <h2 class="card-title">Visión</h2>
-            <p class="card-text">"Desarrollar la oferta turística y el emprendimiento con el fin de posicionar al cantón de 
-              Hojancha como destino turístico a nivel nacional."</p>
+          <div class="card-body" style="line-height: 2; border: 5px solid rgba(0, 0, 0, 0.125);">
+            <h2 class="card-title" style="font-size: 35px;">Visión</h2>
+            <p class="card-text" style="font-size: 20px;">"Desarrollar la oferta turística y el emprendimiento con el fin de posicionar al cantón de Hojancha como destino turístico a nivel nacional."</p>
           </div>
         </div>
       </div>
-
+  
       <div class="col-md-4">
         <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Valores</h2>
+          <div class="card-body" style="border: 5px solid rgba(0, 0, 0, 0.125);">
+            <h2 class="card-title" style="font-size: 35px;">Valores</h2>
             <ul class="list-unstyled">
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">H</span><span style="font-size: 16px;">UMILDAD</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">H</span><span style="font-size: 16px;">UMILDAD</span>
               </li>
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">O</span><span style="font-size: 16px;">PTIMISMO</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">O</span><span style="font-size: 16px;">PTIMISMO</span>
               </li>
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">J</span><span style="font-size: 16px;">OVIALIDAD</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">J</span><span style="font-size: 16px;">OVIALIDAD</span>
               </li>
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">A</span><span style="font-size: 16px;">MISTAD</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">A</span><span style="font-size: 16px;">MISTAD</span>
               </li>
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">N</span><span style="font-size: 16px;">ATURALEZA</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">N</span><span style="font-size: 16px;">ATURALEZA</span>
               </li>
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">C</span><span style="font-size: 16px;">ALIDAD</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">C</span><span style="font-size: 16px;">ALIDAD</span>
               </li>
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">H</span><span style="font-size: 16px;">ONESTIDAD</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">H</span><span style="font-size: 16px;">ONESTIDAD</span>
               </li>
               <li>
-                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 0px;">A</span><span style="font-size: 16px;">MOR</span>
+                <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">A</span><span style="font-size: 16px;">MOR</span>
               </li>
+             
             </ul>
           </div>
-          
-          
-          
         </div>
       </div>
     </div>
   </div>
+  
   </div>
 <br>
 <br>
@@ -480,17 +477,18 @@ Generic layout (demo looks)
       </div>
     </article>
 
-    <article>
-      <div class="article-wrapper">
+    <div style="display: inline-block;">
+      <article class="article-wrapper">
         <figure class="encargado-figure">
-          <img src="{{ asset('images/CarlosAvila2.webp') }}" alt="" class="img-fluid" />
+          <img src="{{ asset('images/CarlosAvila2.webp') }}" alt="" width="20" height="65">
         </figure>
         <div class="article-body">
           <h2>Asociado a CAMHOTUR</h2>
           <p>Carlos Ávila Mata</p>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
+    
     
     
   </section>
@@ -534,7 +532,7 @@ class="text-center" > <strong>Entidades Encargadas</strong></h1>
   <div style="display: inline-block;">
     <article class="article-wrapper">
       <figure class="shield-figure">
-        <img src="{{ asset('images/2.png') }}" alt="" />
+        <img src="{{ asset('images/logoCam.jpg') }}" alt="" />
       </figure>
       <div class="article-body">
         <h2>Cámara Hojancheña de Turismo</h2>
@@ -556,64 +554,61 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
 <br>
 
 <section class="articles">
-
-  <article>
-    <div class="article-wrapper">
-      <figure>
-        <img src="{{ asset('images/Fabian.jpg') }}" alt="" />
+  <div style="display: inline-block;">
+    <article class="article-wrapper">
+      <figure class="shield-figure">
+        <img src="{{ asset('images/Fabian.jpg') }}" alt="" width="200">
       </figure>
       <div class="article-body">
         <h2>FULL-STACK</h2>
-        <p> Fabián Esteban Bolaños Morales
-        </p>
-        
+        <p> Fabián Esteban Bolaños Morales</p>
       </div>
-    </div>
-  </article>
+    </article>
+  </div>
+  
+  
+  
 
-  <article>
-    <div class="article-wrapper">
-      <figure>
-        <img src="{{ asset('images/Gaby.jpg') }}" alt="" />
+  <div style="display: inline-block;">
+    <article class="article-wrapper">
+      <figure class="shield-figure">
+        <img src="{{ asset('images/Gaby.jpg') }}" alt="" width="200">
       </figure>
       <div class="article-body">
         <h2>FRONT-END y QA</h2>
-        <p> Keiry Gabriela Juárez Hernández
-        </p>
-       
+        <p> Keiry Gabriela Juárez Hernández</p>
       </div>
-    </div>
-  </article>
+    </article>
+  </div>
+  
 
-  <article>
-    <div class="article-wrapper">
-      <figure>
-        <img src="{{ asset('images/Solmahr.jpg') }}" alt="" />
+  <div style="display: inline-block;">
+    <article class="article-wrapper">
+      <figure class="shield-figure">
+        <img src="{{ asset('images/Jored.jpg') }}" alt="" width="200">
       </figure>
       <div class="article-body">
         <h2>FULL-STACK</h2>
-        <p> Solmahr Jored Leal Rivas
-        </p>
-       
+        <p> Solmahr Jored Leal Rivas</p>
       </div>
-    </div>
-  </article>
+    </article>
+  </div>
+  
 
-  <article>
-    <div class="article-wrapper">
-      <figure>
-        <img src="{{ asset('images/Marvin.jpg') }}" alt="" />
+  <div style="display: inline-block;">
+    <article class="article-wrapper">
+      <figure class="shield-figure">
+        <img src="{{ asset('images/Josue2.jpg') }}" alt="" width="200">
       </figure>
       <div class="article-body">
         <h2>FULL-STACK</h2>
-        <p> Marvin Josue Alvarado López
-        </p>
-        
+        <p> Marvin Josue Alvarado López</p>
       </div>
-      <br>
-      <br>
-      <br>
-    </section>
+    </article>
+  </div>
+  
+</section>
+
       <!-- Zona Turística Potencial -->
 <section class="container">
     <h1 class="text-center"><strong>Zona Turística Potencial</strong></h1>
@@ -621,47 +616,48 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   </section>
   
 
-    </div>
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
-        <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <a href="" class="navbar-brand">
-                    <h1 class="text-success"><span class="text-white">CAMH</span>OTUR</h1>
-                </a>
-              
-                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Síguenos</h6>
-                <div class="d-flex justify-content-start">
-                    <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-outline-primary btn-square" href="https://www.facebook.com/profile.php?id=100064024153850"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
-            
-           
-            <div class="col-lg-3 col-md-6 mb-5 ml-auto">
-                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contáctenos</h5>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>Hojancha, Guanacaste</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+(506) 8633-6709</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
-                
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid" style="background-color: #001f3f; color: white; padding: 10px 0;">
+    <div class="row pt-2">
+        <div class="col-lg-3 col-md-6 mb-2">
+          <a href="" class="navbar-brand">
+            <h1 class="text-info" style="margin-left: 19px;"><span class="text-white">CAMH</span>OTUR</h1>
+        </a>
+        
+        
+
+            <h6 class="text-white text-uppercase" style="letter-spacing: 5px; padding: 0 20px;">Síguenos</h6>
+
+            <div class="d-flex justify-content-start">
+              <a class="btn btn-outline-primary btn-square border-0" href="URL_DE_WHATSAPP">
+                  <img src="{{ asset('images/whatsapp_brand_icon_211850.png') }}" alt="WhatsApp">
+              </a>
+              <a class="btn btn-outline-primary btn-square border-0" href="URL_DE_FACEBOOK">
+                  <img src="{{ asset('images/Facebook_Square_icon-icons.com_49948.png') }}" alt="Facebook">
+              </a>
+          </div>
+          
+          
+          
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-2 ml-auto">
+            <h5 class="text-white text-uppercase" style="letter-spacing: 2px;">Contáctenos</h5>
+            <p style="padding: 0 0px;"><i class="fa fa-map-marker-alt mr-2"></i>Hojancha, Guanacaste</p>
+            <p style="padding: 0 0px;"><i class="fa fa-phone-alt mr-2"></i>+(506) 8633-6709</p>
+            <p style="padding: 0 0px;"><i class="fa fa-envelope mr-2"></i>info@example.com</p>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        <div class="row">
-            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white-50">Copyright &copy; <a href="#">CAMHOTUR</a>.Nos reservamos todos los derechos.</a>
-                </p>
-            </div>
-            <div class="col-lg-6 text-center text-md-right">
-                <p class="m-0 text-white-50"><a href="https://htmlcodex.com"></a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+</div>
+
+
+
+
+
+
+
+
+
+  
   </article>
 </body>
 </html>
