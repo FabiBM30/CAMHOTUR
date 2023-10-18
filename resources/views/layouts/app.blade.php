@@ -94,7 +94,7 @@
 
     <style>
         .navbar-custom {
-          background-color: #8eda43; /* Puedes ajustar el color cambiando el valor hexadecimal */
+          background-color: #a4cc9a; /* Puedes ajustar el color cambiando el valor hexadecimal */
         }
       </style>
 
@@ -102,7 +102,11 @@
     <nav class="navbar navbar-expand-lg navbar-custom" style="height: 90px;">
 
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ url('/home') }}" style="font-family: 'cursive', sans-serif;">C A M H O T U R</a>
+    <a class="navbar-brand" href="{{ url('/home') }}">
+      <img src="{{ asset('images/LOGOCAMHOTUR__1_-removebg-preview.png') }}" alt="C A M H O T U R" width="170" height="165">
+    </a>
+    
+    
 
 
 
@@ -112,16 +116,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/distritos"><strong>Distritos</strong></a>
+          <a class="nav-link" href="/distritos" style="color: #124b11;"><strong>Distritos</strong></a>
+
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/emprendimientos"><strong>Emprendimientos</strong></a>
+          <a class="nav-link" href="/emprendimientos" style="color: #124b11;"><strong>Emprendimientos</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/catalogos"><strong>Catálogos</strong></a>
+          <a class="nav-link" href="/catalogos" style="color: #124b11;"><strong>Catálogos</strong></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"><strong>Tipos de Emprendimiento y Catálogos</strong></a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true" style="color: #124b11;"><strong>Tipos de Emprendimiento y Catálogos</strong></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Productos') }}">Productos</a></li>
             <li><a class="dropdown-item" href="{{ route('filtrar-emprendimientos', 'Servicios') }}">Servicios</a></li>
@@ -141,27 +146,29 @@
           @guest
               
           @else
-              <li class="nav-item dropdown">
-                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                      role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false" v-pre>
-                      <b>{{ Auth::user()->name }}</b>
-                  </a>
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false" v-pre>
+                <b>{{ Auth::user()->name }}</b>
+            </a>
 
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                          <b>{{ __('Salir') }}</b>
-                      </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    <b>{{ __('Salir') }}</b>
+                </a>
 
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                          class="d-none">
-                          @csrf
-                      </form>
-                  </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                    class="d-none">
+                    @csrf
+                </form>
+            </div>
 
-              </li>
+        </li>
+          
+          
           @endguest
       </ul>
 
