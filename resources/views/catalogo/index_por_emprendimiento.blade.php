@@ -38,7 +38,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $catalogo->nombreCatalogos }}</td>
-                                            <td>{{ $catalogo->cantidad }}</td>
+                                            <td>₡{{ number_format($catalogo->cantidad, 2, ',', '.') }} </td>
                                             <td>{{ $catalogo->estado }}</td>
                                             <td>
                                                 <img src="{{ asset('storage/image/'.$catalogo->foto) }}" width="150" alt="" title="" />

@@ -103,7 +103,7 @@
 
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ url('/home') }}">
-      <img src="{{ asset('images/LOGOCAMHOTUR__1_-removebg-preview.png') }}" alt="C A M H O T U R" width="170" height="165">
+      <img src="{{ asset('images/LOGOCAMHOTUR__1_-removebg-preview.png') }}" alt="C A M H O T U R" width="170" height="175">
     </a>
     
     

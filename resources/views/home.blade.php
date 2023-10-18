@@ -383,17 +383,19 @@ Generic layout (demo looks)
 <br>
 </section>
 <!-- QUE ES CAMHOTUR -->
-<section class="container" style="font-family: Arial, sans-serif;">
-  <h1 class="text-center"><strong>Qué es CAMHOTUR</strong></h1>
-  <p>Descripción General.</p>
+<section class="container" style="font-family: Arial, sans-serif; line-height: 2;">
+  <h1 class="text-center" style="font-size: 26px;"><strong>¿Qué es CAMHOTUR?</strong></h1>
+  <br>
+  <p style="font-size: 20px;">¡Bienvenido a CAMHOTUR! Somos la Cámara Hojancheña de Turismo, y nuestra misión es ofrecer a los viajeros nacionales e internacionales una experiencia turística excepcional en el hermoso cantón de Hojancha, en la provincia de Guanacaste, Costa Rica. Desde playas paradisíacas y montañas exuberantes hasta una cultura rica y sostenibilidad ambiental, Hojancha tiene todo lo que necesitas para una aventura inolvidable. Explora nuestros destinos, descubre emprendimientos locales, sumérgete en la cultura costarricense y planifica tu viaje con nosotros. ¡Te invitamos a ser parte de esta experiencia única de turismo responsable y auténtico en Hojancha!</p>
 </section>
+
 
 <br>
 <br>
 <br>
 <br>
-  <!-- Misión, Visión y Valores -->
-  <title>Misión, Visión y Valores</title>
+<!-- Misión, Visión y Valores -->
+<title>Misión, Visión y Valores</title>
 </head>
 <body>
   <div class="container">
@@ -401,7 +403,7 @@ Generic layout (demo looks)
     <br>
     <div class="row">
       <div class="col-md-4">
-        <div class="card">
+        <div class="card" style="height: 100%;"> <!-- Añade esta línea -->
           <div class="card-body" style="line-height: 2; border: 5px solid rgba(0, 0, 0, 0.125);">
             <h2 class="card-title" style="font-size: 35px;">Misión</h2>
             <p class="card-text" style="font-size: 20px;">"Ofrecer al viajero nacional e internacional una oferta turística acorde con los estándares de calidad, sostenibilidad, ambiental, tecnológico y accesibilidad."</p>
@@ -410,7 +412,7 @@ Generic layout (demo looks)
       </div>
   
       <div class="col-md-4">
-        <div class="card">
+        <div class="card" style="height: 100%;"> <!-- Añade esta línea -->
           <div class="card-body" style="line-height: 2; border: 5px solid rgba(0, 0, 0, 0.125);">
             <h2 class="card-title" style="font-size: 35px;">Visión</h2>
             <p class="card-text" style="font-size: 20px;">"Desarrollar la oferta turística y el emprendimiento con el fin de posicionar al cantón de Hojancha como destino turístico a nivel nacional."</p>
@@ -419,7 +421,7 @@ Generic layout (demo looks)
       </div>
   
       <div class="col-md-4">
-        <div class="card">
+        <div class="card" style="height: 100%;"> <!-- Añade esta línea -->
           <div class="card-body" style="border: 5px solid rgba(0, 0, 0, 0.125);">
             <h2 class="card-title" style="font-size: 35px;">Valores</h2>
             <ul class="list-unstyled">
@@ -447,14 +449,16 @@ Generic layout (demo looks)
               <li>
                 <span style="color: black; font-weight: bold; font-size: 20px; margin-right: 1px;">A</span><span style="font-size: 16px;">MOR</span>
               </li>
-             
+              <!-- Agrega otros elementos de la lista aquí -->
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</body>
+</html>
+
   </div>
 <br>
 <br>
@@ -468,7 +472,7 @@ Generic layout (demo looks)
     <article>
       <div class="article-wrapper" >
         <figure class="encargado-figure">
-          <img src="/imgs/pain1.png" alt="" />
+          <img src="{{ asset('images/EzequielAguiree.jpg') }}" alt="" />
         </figure>
         <div class="article-body">
           <h2>Director de CAMHOTUR</h2>
@@ -506,11 +510,11 @@ class="text-center" > <strong>Entidades Encargadas</strong></h1>
 <br>
 <br>
 </section>
-<section class="container">
-  <div style="display: inline-block; margin-right: 20px;">
+<section class="container" style="display: table; width: 100%;">
+  <div style="display: table-cell; width: 30%; vertical-align: middle;">
     <article class="article-wrapper">
-      <figure class="logo-figure">
-        <img src="{{ asset('images/Sede Regional.jpg') }}" alt="" />
+      <figure class="logo-figure" style="position: relative; top: 45px;"> <!-- Ajusta el valor según sea necesario -->
+        <img src="{{ asset('images/LOGOS sede.png') }}" alt="" />
       </figure>
       <div class="article-body">
         <h2>Universidad Nacional Sede Regional Chorotega</h2>
@@ -518,28 +522,31 @@ class="text-center" > <strong>Entidades Encargadas</strong></h1>
     </article>
   </div>
 
-  <div style="display: inline-block; margin-right: 20px;">
-    <article class="article-wrapper">
+  <div style="display: table-cell; width: 33.33%; vertical-align: top;">
+    <article class "article-wrapper">
       <figure class="logo-figure">
-        <img src="{{ asset('images/CARRERA.jpg') }}" alt="" />
+        <img src="{{ asset('images/LOGO IG ROJO.png') }}" alt="" width="200" />
       </figure>
       <div class="article-body">
-        <h2>Carrera de Ingenieria en Sistemas de Informacion</h2>
+        <h2>Carrera de Ingeniería en Sistemas de Información</h2>
       </div>
     </article>
   </div>
 
-  <div style="display: inline-block;">
+  <div style="display: table-cell; width: 33.33%;">
     <article class="article-wrapper">
       <figure class="shield-figure">
         <img src="{{ asset('images/logoCam.jpg') }}" alt="" />
       </figure>
       <div class="article-body">
-        <h2>Cámara Hojancheña de Turismo</h2>
+        <h2>Camara Hojancheña de Turismo</h2>
       </div>
     </article>
   </div>
 </section>
+
+
+
 
 <br>
 <br>
@@ -575,7 +582,7 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
         <img src="{{ asset('images/Gaby.jpg') }}" alt="" width="200">
       </figure>
       <div class="article-body">
-        <h2>FRONT-END y QA</h2>
+        <h2>FRONT-END</h2>
         <p> Keiry Gabriela Juárez Hernández</p>
       </div>
     </article>
@@ -608,58 +615,54 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   </div>
   
 </section>
-
+<br>
+<br>
+<br>
       <!-- Zona Turística Potencial -->
-<section class="container">
-    <h1 class="text-center"><strong>Zona Turística Potencial</strong></h1>
-    <p>Tu contenido sobre la zona turística potencial.</p>
-  </section>
-  
-
-  <div class="container-fluid" style="background-color: #001f3f; color: white; padding: 10px 0;">
-    <div class="row pt-2">
-        <div class="col-lg-3 col-md-6 mb-2">
+      <section class="container" style="font-family: Arial, sans-serif; line-height: 2;">
+        <h1 class="text-center" style="font-size: 26px;"><strong>Zona Turística Potencial</strong></h1>
+        <br>
+        <p style="font-size: 20px;">El cantón de Hojancha, en Costa Rica, es una potencia turística gracias a su impresionante belleza natural, su enfoque en la sostenibilidad, su rica cultura local, las actividades al aire libre, su comunidad amigable y el turismo rural. Además, es de fácil acceso y ofrece una amplia variedad de opciones para los visitantes.</p>
+      </section>
+      
+  <br>
+  <br>
+ 
+  <!-- FOOTER-->
+<div class="container-fluid" style="background-color: #001f3f; color: white; padding: 30; margin: 0;">
+  <div class="row pt-2">
+      <div class="col-lg-3 col-md-6 mb-2">
           <a href="" class="navbar-brand">
-            <h1 class="text-info" style="margin-left: 19px;"><span class="text-white">CAMH</span>OTUR</h1>
-        </a>
-        
-        
+              <h1 class="text-info" style="margin-left: 19px;"><span class="text-white">CAMH</span>OTUR</h1>
+          </a>
 
-            <h6 class="text-white text-uppercase" style="letter-spacing: 5px; padding: 0 20px;">Síguenos</h6>
+          <h6 class="text-white text-uppercase" style="letter-spacing: 5px; padding: 0 20px;">Síguenos</h6>
 
-            <div class="d-flex justify-content-start">
-              <a class="btn btn-outline-primary btn-square border-0" href="URL_DE_WHATSAPP">
+          <div class="d-flex justify-content-start">
+              <a class="btn btn-outline-primary btn-square border-0" href="https://wa.me/qr/P2ZRVOI4PSCFA1">
                   <img src="{{ asset('images/whatsapp_brand_icon_211850.png') }}" alt="WhatsApp">
               </a>
-              <a class="btn btn-outline-primary btn-square border-0" href="URL_DE_FACEBOOK">
+              <a class "btn btn-outline-primary btn-square border-0" href="https://www.facebook.com/profile.php?id=100008943519205&mibextid=ZbWKwL">
                   <img src="{{ asset('images/Facebook_Square_icon-icons.com_49948.png') }}" alt="Facebook">
               </a>
           </div>
-          
-          
-          
-        </div>
+      </div>
 
-        <div class="col-lg-3 col-md-6 mb-2 ml-auto">
-            <h5 class="text-white text-uppercase" style="letter-spacing: 2px;">Contáctenos</h5>
-            <p style="padding: 0 0px;"><i class="fa fa-map-marker-alt mr-2"></i>Hojancha, Guanacaste</p>
-            <p style="padding: 0 0px;"><i class="fa fa-phone-alt mr-2"></i>+(506) 8633-6709</p>
-            <p style="padding: 0 0px;"><i class="fa fa-envelope mr-2"></i>info@example.com</p>
-        </div>
-    </div>
+      <div class="col-lg-3 col-md-6 mb-2 ml-auto">
+          <h5 class="text-white text-uppercase" style="letter-spacing: 2px;">Contáctenos</h5>
+          <p style="padding: 0;"><i class="fa fa-map-marker-alt mr-2"></i>Hojancha, Guanacaste</p>
+          <p style="padding: 0;"><i class="fa fa-phone-alt mr-2"></i>+(506) 8633-6709</p>
+          <p style="padding: 0;"><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+      </div>
+  </div>
 </div>
 
 
-
-
-
-
-
-
-
-  
   </article>
+  
 </body>
+
+
 </html>
 
 @endsection
