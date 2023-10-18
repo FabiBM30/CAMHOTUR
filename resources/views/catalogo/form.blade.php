@@ -1,3 +1,18 @@
+<script src="https://unpkg.com/autonumeric@4.2.0/dist/autoNumeric.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new AutoNumeric('#precio', {
+            currencySymbol: '₡',
+            digitGroupSeparator: ',',
+            decimalCharacter: '.',
+            decimalPlaces: 2,
+            minimumValue: '0.00',
+            unformatOnSubmit: true // Permite enviar el valor sin formato al servidor
+        });
+    });
+</script>
+
+
 <div class="box box-info padding-1">
     <div class="box-body">
         
@@ -19,18 +34,22 @@
 
             </div>
             <br>
-        <div class="form-group">
-            {{ Form::label('Precio') }}
-            {{ Form::text('cantidad', $catalogo->cantidad, ['class' => 'form-control' . ($errors->has('cantidad') ? ' is-invalid' : ''), 'placeholder' => 'Precio del producto...']) }}
-            {!! $errors->first('cantidad', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+            <div class="form-group">
+    {{ Form::label('Precio') }}
+    {{ Form::text('cantidad', $catalogo->cantidad, [
+        'class' => 'form-control' . ($errors->has('cantidad') ? ' is-invalid' : ''),
+        'placeholder' => 'Precio del producto...',
+        'id' => 'precio'
+    ]) }}
+    {!! $errors->first('cantidad', '<div class="invalid-feedback">:message</div>') !!}
+</div>
         <br>
         <div class="form-group">
-                                {{ Form::label('estado', 'Estado') }}
-                                {{ Form::select('estado', ['activo' => 'Activo', 'inactivo' => 'Inactivo'], $catalogo->estado, ['class' => 'form-control', 'placeholder' => 'Seleccione Estado']) }}
-                                {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
-                            </div>
-                            <br>
+             {{ Form::label('estado', 'Estado') }}
+             {{ Form::select('estado', ['activo' => 'Activo', 'inactivo' => 'Inactivo'], $catalogo->estado, ['class' => 'form-control', 'placeholder' => 'Seleccione Estado']) }}
+             {!! $errors->first('estado', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+         <br>
         <div class="form-group">
    
    {{ Form::label('foto  ', 'Seleccione una imagen para el producto...') }}
