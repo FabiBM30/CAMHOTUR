@@ -54,7 +54,7 @@
 											{{-- <td>{{ $catalogo->idCatalogos }}</td> --}}
 											<td>{{ $catalogo->nombreCatalogos }}</td>
 											<td>{{ $catalogo->emprendimiento->nombreEmprendimiento }}</td>
-											<td>{{ $catalogo->cantidad }}</td>
+                                            <td>₡{{ number_format($catalogo->cantidad, 2, ',', '.') }} </td>
 											<td>{{ $catalogo->estado }}</td>
 											
                                             <td>
