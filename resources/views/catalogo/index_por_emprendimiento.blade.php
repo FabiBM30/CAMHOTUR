@@ -66,23 +66,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($catalogos as $catalogo)
-                         @if ($catalogo->estado === 'activo')
-        <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $catalogo->nombreCatalogos }}</td>
-            <td>₡{{ number_format($catalogo->cantidad, 2, ',', '.') }} </td>
-            <td>{{ $catalogo->estado }}</td>
-            <td>
-                <img src="{{ asset('storage/image/'.$catalogo->foto) }}" width="150" alt="" title="" />
-            </td>
-            <td>
-                <!-- Agrega aquí los botones que necesites -->
-            </td>
-        </tr>
-    @endif
-@endforeach
-
+                                    @foreach ($catalogos as $catalogo)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $catalogo->nombreCatalogos }}</td>
+                                            <td>{{ $catalogo->cantidad }}</td>
+                                            <td>{{ $catalogo->estado }}</td>
+                                            <td>
+                                                <img src="{{ asset('storage/image/'.$catalogo->foto) }}" width="150" alt="" title="" />
+                                            </td>
+                                            <td>
+                                                <!-- Agrega aquí los botones que necesites -->
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
