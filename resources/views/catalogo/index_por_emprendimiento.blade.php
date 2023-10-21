@@ -24,7 +24,12 @@
         });
     });
 </script>
-
+<style>
+     #{}
+  .btn btn-primary ordenar-precio{
+  width:10000px;
+  }
+</style>
 
 @extends('layouts.app')
 
