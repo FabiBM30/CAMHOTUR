@@ -92,11 +92,11 @@
                             </table>
                         </div>
                         <div class="row mt-0">
-                            <div class="col-md-0 offset-md-0">
-                                </button>
-                                <a class="btn btn-danger" href="{{ route('home') }}"> Atrás</a>
+    <div class="col-md-0 offset-md-0">
+        <a class="btn btn-danger" href="{{ url('/') }}">Atrás</a>
+    </div>
+</div>
 
-                            </div>
                         </div>
                     </div>
                 </div>
