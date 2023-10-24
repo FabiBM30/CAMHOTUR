@@ -260,6 +260,38 @@ Generic layout (demo looks)
   }
 }
 
+
+/* ESTILOS COLLAGE */
+.collage {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .collage img {
+            max-width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+
+
+
+
+
+
 .encargado-figure {
   width: 150px;
   height: 150px;
@@ -352,31 +384,157 @@ Generic layout (demo looks)
 <body>
 <div class="main-home">
     <!-- Carrusel -->
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" style="justify-content: center;">
-      {{-- <img src="{{ asset('images') }}" alt="Slide 1"> --}}
+    <!DOCTYPE html>
+
+    <html>
+
+<head>
+    <!-- Agrega tus enlaces a CSS si los tienes -->
+    <style>
+        .main-banner {
+            background: #ffffff;
+            padding: 40px 0;
+        }
+
+        .left-content,
+        .right-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .thumb {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%; /* Cambia el valor de 'auto' a '100%' para hacer las imágenes más grandes */
+            display: block;
+        }
+
+        .inner-content {
+            background: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .inner-content h4 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .inner-content span {
+            color: #007BFF;
+            font-size: 16px;
+            display: block;
+        }
+
+        .main-border-button {
+            margin-top: 20px;
+        }
+
+        .main-border-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .main-border-button a:hover {
+            background: #0056b3;
+        }
+
+        .right-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-banner" id="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <div class="thumb">
+                            <img src="{{ asset('images/313874_matamb.png') }}" alt="">
+                            <div class="inner-content">
+                                <h4>Matambu</h4>
+                                <div class="main-border-button">
+                                    <a href="/entrepreneur">Acerca de </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="right-grid">
+                            <div class="thumb">
+                                <img src="{{ asset('images/Aerial_view_of_Carrillo.png') }}" alt="">
+                                <div class="inner-content">
+                                    <h4>Puerto Carrillo</h4>
+                                    <div class="main-border-button">
+                                        <a href="/entrepreneur">Acerca de</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thumb">
+                                <img src="{{ asset('images/HOJANCHA.PNG') }}" alt="">
+                                <div class "inner-content">
+                                    <h4>Hojancha</h4>
+                                    <div class="main-border-button">
+                                        <a href="/entrepreneur">Acerca de</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thumb">
+                                <img src="{{ asset('images/Finca-Guanacaste-Hojancha-Huacas5.jpeg') }}" alt="">
+                                <div class="inner-content">
+                                    <h4>Huacas</h4>
+                                    <div class="main-border-button">
+                                        <a href="/entrepreneur">Acerca de</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thumb">
+                                <img src="{{ asset('images/monte _romo.jpg') }}" alt="">
+                                <div class="inner-content">
+                                    <h4>Monte Romo</h4>
+                                    <div class="main-border-button">
+                                        <a href="/entrepreneur">Acerca de</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item" style="justify-content: center; width" >
-      {{-- <img src={{ asset('images')}} alt="Slide 2"> --}}
-    </div>
-    <div class="carousel-item" style="justify-content: center;">
-      {{-- <img src={{ asset('images')}} alt="Slide 3"> --}}
-    </div> 
-    <div class="carousel-item" style="justify-content: center;">
-      {{-- <img src={{ asset('images')}} alt="Slide 4"> --}}
-    </div> 
-    <!-- Agrega más elementos carousel-item según tus necesidades -->
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+</body>
+
+</html>
+    
+
+  
+
+
+
+
+
+
+  
 <br>
 <br>
 <br>
