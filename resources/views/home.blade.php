@@ -460,70 +460,102 @@ Generic layout (demo looks)
     </style>
 </head>
 
+
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .description-button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .description-button:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .description-container {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+        }
+        .image-container:hover .description-container {
+            display: block;
+        }
+    </style>
+</head>
 <body>
     <div class="main-banner" id="top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="left-content">
-                        <div class="thumb">
-                            <img src="{{ asset('images/313874_matamb.png') }}" alt="">
-                            <div class="inner-content">
-                                <h4>Matambu</h4>
-                                <div class="main-border-button">
-                                    <a href="/entrepreneur">Acerca de </a>
-                                </div>
+                        <div class="image-container">
+                            <img src="{{ asset('images/HojanchaNueva.jpg') }}" alt="Hojancha">
+                            <button type="button" class="description-button" onclick="showDescription('Hojancha')">Mostrar Descripción</button>
+                            <div class="description-container">
+                                Descripción de Hojancha...
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="right-content">
-                        <div class="right-grid">
-                            <div class="thumb">
-                                <img src="{{ asset('images/Aerial_view_of_Carrillo.png') }}" alt="">
-                                <div class="inner-content">
-                                    <h4>Puerto Carrillo</h4>
-                                    <div class="main-border-button">
-                                        <a href="/entrepreneur">Acerca de</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('images/HOJANCHA.PNG') }}" alt="">
-                                <div class "inner-content">
-                                    <h4>Hojancha</h4>
-                                    <div class="main-border-button">
-                                        <a href="/entrepreneur">Acerca de</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('images/Finca-Guanacaste-Hojancha-Huacas5.jpeg') }}" alt="">
-                                <div class="inner-content">
-                                    <h4>Huacas</h4>
-                                    <div class="main-border-button">
-                                        <a href="/entrepreneur">Acerca de</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('images/monte _romo.jpg') }}" alt="">
-                                <div class="inner-content">
-                                    <h4>Monte Romo</h4>
-                                    <div class="main-border-button">
-                                        <a href="/entrepreneur">Acerca de</a>
-                                    </div>
-                                </div>
+                <div class="right-content">
+                    <div class="right-grid">
+                        <div class="image-container">
+                            <img src="{{ asset('images/PuertoCarrilloNueva.png') }}" alt="Puerto Carrillo">
+                            <button type="button" class="description-button" onclick="showDescription('Puerto Carrillo')">Mostrar Descripción</button>
+                            <div class="description-container">
+                                Descripción de Puerto Carrillo...
                             </div>
                         </div>
+                        <!-- Agrega imágenes y botones similares para otros lugares si es necesario -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
+    <!-- Contenedor para mostrar la descripción -->
+    <div id="imageDescriptionContainer" class="modal" style="display: none;">
+        <h2>Descripción</h2>
+        <p id="imageDescription"></p>
+        <button onclick="closeDescription()">Cerrar</button>
+    </div>
+
+    <script>
+        // Función para mostrar la descripción
+        function showDescription(description) {
+            document.getElementById('imageDescription').innerText = description;
+            document.getElementById('imageDescriptionContainer').style.display = 'block';
+        }
+
+        // Función para cerrar la descripción
+        function closeDescription() {
+            document.getElementById('imageDescriptionContainer').style.display = 'none';
+        }
+    </script>
+</body>
 </html>
     
 
