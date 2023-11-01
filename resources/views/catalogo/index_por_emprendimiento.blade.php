@@ -49,11 +49,18 @@
                             {{ __('Productos de   ') }}{{ $emprendimiento->nombreEmprendimiento }}
                             </span>
                             <div class="float-right">
-                                <!-- Puedes agregar un botón aquí si es necesario -->
-                                <button id="ordenarPorPrecioAsc" class="btn btn-primary ordenar-precio">Ordenar por precio (Menor a Mayor)</button>
-                                <button id="ordenarPorPrecioDesc" class="btn btn-primary ordenar-precio">Ordenar por precio (Mayor a Menor)</button>
-
+                                <div class="ordenar-leyenda" style="float: left; padding-right: 10px;">Ordenar por precio de:</div>
+                                <div style="clear: both;"></div>
+                                <button id="ordenarPorPrecioAsc" class="btn btn-primary ordenar-precio">Menor a Mayor</button>
+                                <button id="ordenarPorPrecioDesc" class="btn btn-primary ordenar-precio">Mayor a Menor</button>
                             </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         </div>
                     </div>
 
