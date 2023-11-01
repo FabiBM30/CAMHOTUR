@@ -464,100 +464,134 @@ Generic layout (demo looks)
 
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .image-container {
-            position: relative;
-            display: inline-block;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-        }
-        .description-button {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            cursor: pointer;
-        }
-        .description-button:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-        .description-container {
-            display: none;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-        }
-        .image-container:hover .description-container {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      .main-banner {
+          background: #f0f0f0;
+      }
+      .thumb-container {
+          width: 100%;
+          max-height: 510px; /* Aumenta la altura máxima del contenedor de la imagen izquierda */
+          position: relative;
+          overflow: hidden;
+      }
+      .thumb img {
+          width: 120%;
+          height: 100%;
+          object-fit: cover;
+      }
+      .inner-content {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          text-align: center;
+          padding: 5px;
+          transform: translateY(100%);
+          transition: transform 0.3s;
+      }
+      .thumb:hover .inner-content {
+          transform: translateY(0);
+      }
+      .inner-content h4 {
+          font-size: 18px;
+          margin: 0;
+      }
+      .main-border-button {
+          margin-top: 10px;
+          text-align: center;
+      }
+      .main-border-button a {
+          color: white;
+          text-decoration: none;
+          border: 1px solid white;
+          padding: 5px 10px;
+          display: inline-block;
+      }
+      .main-border-button a:hover {
+          background: white;
+          color: #000;
+      }
+  </style>
 </head>
 <body>
-    <div class="main-banner" id="top">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="left-content">
-                        <div class="image-container">
-                            <img src="{{ asset('images/HojanchaNueva.jpg') }}" alt="Hojancha">
-                            <button type="button" class="description-button" onclick="showDescription('Hojancha')">Mostrar Descripción</button>
-                            <div class="description-container">
-                                Descripción de Hojancha...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <div class="right-grid">
-                        <div class="image-container">
-                            <img src="{{ asset('images/PuertoCarrilloNueva.png') }}" alt="Puerto Carrillo">
-                            <button type="button" class="description-button" onclick="showDescription('Puerto Carrillo')">Mostrar Descripción</button>
-                            <div class="description-container">
-                                Descripción de Puerto Carrillo...
-                            </div>
-                        </div>
-                        <!-- Agrega imágenes y botones similares para otros lugares si es necesario -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contenedor para mostrar la descripción -->
-    <div id="imageDescriptionContainer" class="modal" style="display: none;">
-        <h2>Descripción</h2>
-        <p id="imageDescription"></p>
-        <button onclick="closeDescription()">Cerrar</button>
-    </div>
-
-    <script>
-        // Función para mostrar la descripción
-        function showDescription(description) {
-            document.getElementById('imageDescription').innerText = description;
-            document.getElementById('imageDescriptionContainer').style.display = 'block';
-        }
-
-        // Función para cerrar la descripción
-        function closeDescription() {
-            document.getElementById('imageDescriptionContainer').style.display = 'none';
-        }
-    </script>
+  <div class="main-banner" id="top">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="left-content">
+                      <div class="thumb-container">
+                          <div class="thumb">
+                              <img src="{{ asset('images/HojanchaNueva.jpg') }}" alt="Hojancha">
+                              <div class="inner-content">
+                                  <h4>Hojancha</h4>
+                                  <div class="main-border-button">
+                                      <a href="/entrepreneur">Acerca de</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="right-content">
+                      <div class="right-grid">
+                          <div class="thumb-container">
+                              <div class="thumb">
+                                  <img src="{{ asset('images/PuertoCarrilloNueva.png') }}" alt="Puerto Carrillo">
+                                  <div class="inner-content">
+                                      <h4>Puerto Carrillo</h4>
+                                      <div class="main-border-button">
+                                          <a href="/entrepreneur">Acerca de</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="thumb-container">
+                              <div class="thumb">
+                                  <img src="{{ asset('images/MatambuNueva.jpg') }}" alt="Matambu">
+                                  <div class="inner-content">
+                                      <h4>Matambu</h4>
+                                      <div class="main-border-button">
+                                          <a href="/entrepreneur">Acerca de</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="thumb-container">
+                              <div class="thumb">
+                                  <img src="{{ asset('images/HuacasNueva.jpg') }}" alt="Huacas">
+                                  <div class="inner-content">
+                                      <h4>Huacas</h4>
+                                      <div class="main-border-button">
+                                          <a href="/entrepreneur">Acerca de</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class "thumb-container">
+                              <div class="thumb">
+                                  <img src="{{ asset('images/MonteRomo2.png') }}" alt="Monte Romo">
+                                  <div class="inner-content">
+                                      <h4>Monte Romo</h4>
+                                      <div class="main-border-button">
+                                          <a href="/entrepreneur">Acerca de</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </body>
 </html>
-    
+
 
   
 
@@ -594,7 +628,7 @@ Generic layout (demo looks)
     <div class="row">
       <div class="col-md-4">
         <div class="card" style="height: 100%;"> <!-- Añade esta línea -->
-          <div class="card-body" style="line-height: 2; border: 5px solid rgba(0, 0, 0, 0.125);">
+          <div class="card-body" style="line-height: 2; border: 5px solid #124b11;">
             <h2 class="card-title" style="font-size: 35px;">Misión</h2>
             <p class="card-text" style="font-size: 20px;">"Ofrecer al viajero nacional e internacional una oferta turística acorde con los estándares de calidad, sostenibilidad, ambiental, tecnológico y accesibilidad."</p>
           </div>
@@ -603,7 +637,7 @@ Generic layout (demo looks)
   
       <div class="col-md-4">
         <div class="card" style="height: 100%;"> <!-- Añade esta línea -->
-          <div class="card-body" style="line-height: 2; border: 5px solid rgba(0, 0, 0, 0.125);">
+          <div class="card-body" style="line-height: 2; border: 5px solid #124b11;">
             <h2 class="card-title" style="font-size: 35px;">Visión</h2>
             <p class="card-text" style="font-size: 20px;">"Desarrollar la oferta turística y el emprendimiento con el fin de posicionar al cantón de Hojancha como destino turístico a nivel nacional."</p>
           </div>
@@ -612,7 +646,7 @@ Generic layout (demo looks)
   
       <div class="col-md-4">
         <div class="card" style="height: 100%;"> <!-- Añade esta línea -->
-          <div class="card-body" style="border: 5px solid rgba(0, 0, 0, 0.125);">
+          <div class="card-body" style="border: 5px solid #124b11;">
             <h2 class="card-title" style="font-size: 35px;">Valores</h2>
             <ul class="list-unstyled">
               <li>
@@ -859,4 +893,4 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
