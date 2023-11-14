@@ -2,7 +2,7 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('Nombre') }}
+            {{ Form::label('nombre') }}
             {{ Form::text('nombreDistrito', $distrito->nombreDistrito, ['class' => 'form-control' . ($errors->has('nombreDistrito') ? ' is-invalid' : ''), 'placeholder' => 'Ponga el nombre del distrito...']) }}
             {!! $errors->first('nombreDistrito', '<div class="invalid-feedback">:message</div>') !!}
         </div>
