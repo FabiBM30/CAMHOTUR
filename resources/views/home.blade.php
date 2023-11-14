@@ -472,7 +472,7 @@ Generic layout (demo looks)
       }
       .thumb-container {
           width: 100%;
-          max-height: 510px; /* Aumenta la altura máxima del contenedor de la imagen izquierda */
+          max-height: 430px; /* Aumenta la altura máxima del contenedor de la imagen izquierda */
           position: relative;
           overflow: hidden;
       }
