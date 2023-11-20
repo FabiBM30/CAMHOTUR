@@ -144,5 +144,21 @@
             });
         }
         </script>
+        <script>
+            function confirmUpdate(catalogoId) {
+                Swal.fire({
+                    title: '¿Quieres actualizar este catálogo?',
+                    text: '¿Vas a actualizar este catálogo, quieres continuar?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí, actualizar.',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "{{ route('catalogos.edit', ':catalogoId') }}".replace(':catalogoId', catalogoId);
+                    }
+                });
+            }
+        </script>
         
     

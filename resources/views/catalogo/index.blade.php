@@ -42,7 +42,7 @@
 										<th>Precio</th>
 										<th>Estado</th>
 										<th>Imagen</th>
-
+                                        <th>Acciones</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -60,24 +60,98 @@
                                             <td>
                                             <img src="{{ asset('storage/image/'.$catalogo->foto) }}" width="150" alt="" title="" />
                                            </td>
-                                            <td>
-                                                <form action="{{ route('catalogos.destroy',$catalogo->idCatalogos) }}" method="POST">
-                                                    {{-- <a class="btn btn-sm btn-primary " href="{{ route('catalogos.show',$catalogo->idCatalogos) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a> --}}
-                                                    <a class="btn btn-sm btn-warning" href="{{ route('catalogos.edit',$catalogo->idCatalogos) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Actualizar') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                                           <td>
+                                           <form action="{{ route('catalogos.destroy', $catalogo->idCatalogos) }}" method="POST">
+                                            <a class="btn btn-sm btn-warning" href="#" onclick="confirmUpdate({{ $catalogo->idCatalogos }})">
+                                                <i class="fa fa-fw fa-edit"></i> {{ __('Actualizar') }}
+                                            </a>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteCatalogo({{ $catalogo->idCatalogos }})">
+                                                <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </div>
-                </div>
-                {!! $catalogos->links() !!}
-            </div>
-        </div>
-    </div>
-@endsection
+                @endsection
+                
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                <script>
+                    function deleteCatalogo(catalogoId) {
+                        const route = "{{ route('catalogos.destroy', ':catalogoId') }}".replace(':catalogoId', catalogoId);
+                
+                        Swal.fire({
+                            title: '¿Estás seguro de eliminar este catálogo?',
+                            text: '¡No podrás deshacer esta acción!',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonText: 'Sí, eliminar',
+                            cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                fetch(route, {
+                                    method: 'POST',
+                                    headers: {
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ _method: 'DELETE' })
+                                })
+                                .then(response => {
+                                    if (response.ok) {
+                                        // Recarga la página
+                                        window.location.reload();
+                                    } else {
+                                        // Maneja el error de eliminación aquí
+                                        Swal.fire({
+                                            title: 'Error',
+                                            text: 'No se pudo eliminar este catálogo.',
+                                            icon: 'error',
+                                        });
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    Swal.fire({
+                                        title: 'Error',
+                                        text: 'Ocurrió un error inesperado.',
+                                        icon: 'error',
+                                    });
+                                });
+                            }
+                        });
+                    }
+
+                    function confirmUpdate(distritoId) {
+        Swal.fire({
+            title: '¿Quieres actualizar este distrito?',
+            text: '¿Vas a actualizar este distrito, quieres continuar?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, actualizar.',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "{{ route('distritos.edit', ':distritoId') }}".replace(':distritoId', distritoId);
+            }
+        });
+    }
+    function confirmUpdate(catalogoId) {
+        Swal.fire({
+            title: '¿Quieres actualizar este catálogo?',
+            text: '¿Vas a actualizar este catálogo, quieres continuar?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, actualizar.',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "{{ route('catalogos.edit', ':catalogoId') }}".replace(':catalogoId', catalogoId);
+            }
+        });
+    }
+
+</script>

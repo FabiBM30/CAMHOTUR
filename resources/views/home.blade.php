@@ -528,8 +528,10 @@ Generic layout (demo looks)
                               <img src="{{ asset('images/HojanchaNueva.jpg') }}" alt="Hojancha">
                               <div class="inner-content">
                                   <h4>Hojancha</h4>
+                                  <br>
+                                  <h4>"Más información próximamente..."</h4>
                                   <div class="main-border-button">
-                                      <a href="/entrepreneur">Acerca de</a>
+                                      {{-- <a href="/entrepreneur">Acerca de</a> --}}
                                   </div>
                               </div>
                           </div>
@@ -544,8 +546,10 @@ Generic layout (demo looks)
                                   <img src="{{ asset('images/PuertoCarrilloNueva.png') }}" alt="Puerto Carrillo">
                                   <div class="inner-content">
                                       <h4>Puerto Carrillo</h4>
+                                      <br>
+                                      <h4>"Más información próximamente..."</h4>
                                       <div class="main-border-button">
-                                          <a href="/entrepreneur">Acerca de</a>
+                                          {{-- <a href="/entrepreneur">Acerca de</a> --}}
                                       </div>
                                   </div>
                               </div>
@@ -555,8 +559,10 @@ Generic layout (demo looks)
                                   <img src="{{ asset('images/MatambuNueva.jpg') }}" alt="Matambu">
                                   <div class="inner-content">
                                       <h4>Matambu</h4>
+                                      <br>
+                                      <h4>"Más información próximamente..."</h4>
                                       <div class="main-border-button">
-                                          <a href="/entrepreneur">Acerca de</a>
+                                          {{-- <a href="/entrepreneur">Acerca de</a> --}}
                                       </div>
                                   </div>
                               </div>
@@ -566,19 +572,23 @@ Generic layout (demo looks)
                                   <img src="{{ asset('images/HuacasNueva.jpg') }}" alt="Huacas">
                                   <div class="inner-content">
                                       <h4>Huacas</h4>
+                                      <br>
+                                      <h4>"Más información próximamente..."</h4>
                                       <div class="main-border-button">
-                                          <a href="/entrepreneur">Acerca de</a>
+                                          {{-- <a href="/entrepreneur">Acerca de</a> --}}
                                       </div>
                                   </div>
                               </div>
                           </div>
-                          <div class "thumb-container">
+                          <div class ="thumb-container">
                               <div class="thumb">
                                   <img src="{{ asset('images/MonteRomo2.png') }}" alt="Monte Romo">
                                   <div class="inner-content">
                                       <h4>Monte Romo</h4>
+                                      <br>
+                                      <h4>"Más información próximamente..."</h4>
                                       <div class="main-border-button">
-                                          <a href="/entrepreneur">Acerca de</a>
+                                          {{-- <a href="/entrepreneur">Acerca de</a> --}}
                                       </div>
                                   </div>
                               </div>
@@ -699,7 +709,7 @@ Generic layout (demo looks)
           <img src="{{ asset('images/EzequielAguiree.jpg') }}" alt="" />
         </figure>
         <div class="article-body">
-          <h2>Director de CAMHOTUR</h2>
+          <h2><strong>Director de CAMHOTUR</strong></h2>
           <p>Ezequiel Aguirre Pérez</p>
         </div>
       </div>
@@ -711,7 +721,7 @@ Generic layout (demo looks)
           <img src="{{ asset('images/CarlosAvila2.webp') }}" alt="" width="20" height="65">
         </figure>
         <div class="article-body">
-          <h2>Asociado a CAMHOTUR</h2>
+          <h2><strong>Asociado a CAMHOTUR</strong></h2>
           <p>Carlos Ávila Mata</p>
         </div>
       </article>
@@ -747,7 +757,7 @@ class="text-center" > <strong>Entidades Encargadas</strong></h1>
   </div>
 
   <div style="display: table-cell; width: 33.33%; vertical-align: top;">
-    <article class "article-wrapper">
+    <article class="article-wrapper">
       <figure class="logo-figure">
         <img src="{{ asset('images/LOGO IG ROJO.png') }}" alt="" width="200" />
       </figure>
@@ -788,10 +798,10 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <div style="display: inline-block;">
     <article class="article-wrapper">
       <figure class="shield-figure">
-        <img src="{{ asset('images/Fabian.jpg') }}" alt="" width="200">
+        <img src="{{ asset('images/fabian2.png') }}" alt="" width="200">
       </figure>
       <div class="article-body">
-        <h2>FULL-STACK</h2>
+        <h2><strong>FULL-STACK</strong></h2>
         <p> Fabián Esteban Bolaños Morales</p>
       </div>
     </article>
@@ -803,10 +813,10 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <div style="display: inline-block;">
     <article class="article-wrapper">
       <figure class="shield-figure">
-        <img src="{{ asset('images/Gaby.jpg') }}" alt="" width="200">
+        <img src="{{ asset('images/GABY2.jpg') }}" alt="" width="200">
       </figure>
       <div class="article-body">
-        <h2>FRONT-END</h2>
+        <h2><strong>FRONT-END</strong></h2>
         <p> Keiry Gabriela Juárez Hernández</p>
       </div>
     </article>
@@ -816,10 +826,10 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <div style="display: inline-block;">
     <article class="article-wrapper">
       <figure class="shield-figure">
-        <img src="{{ asset('images/Jored.jpg') }}" alt="" width="200">
+        <img src="{{ asset('images/rokay2.png') }}" alt="" width="200">
       </figure>
       <div class="article-body">
-        <h2>FULL-STACK</h2>
+        <h2><strong>FULL-STACK</strong></h2>
         <p> Solmahr Jored Leal Rivas</p>
       </div>
     </article>
@@ -829,10 +839,10 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <div style="display: inline-block;">
     <article class="article-wrapper">
       <figure class="shield-figure">
-        <img src="{{ asset('images/Josue2.jpg') }}" alt="" width="200">
+        <img src="{{ asset('images/marvin2.png') }}" alt="" width="200">
       </figure>
       <div class="article-body">
-        <h2>FULL-STACK</h2>
+        <h2><strong>FULL-STACK</strong></h2>
         <p> Marvin Josue Alvarado López</p>
       </div>
     </article>
