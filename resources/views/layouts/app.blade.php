@@ -35,9 +35,13 @@
                         <!-- Elementos del navbar que se muestran siempre -->
 
                         @auth
-<li class="nav-item">
+
+                        
+{{-- <li class="nav-item">
     <a class="nav-link" href="/distritos" style="color: #124b11;"><strong>Distritos</strong></a>
-</li>
+</li>      --}}
+
+
 <li class="nav-item">
     <a class="nav-link" href="/emprendimientos" style="color: #124b11;"><strong>Emprendimientos</strong></a>
 </li>

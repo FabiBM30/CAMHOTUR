@@ -84,7 +84,7 @@
                         const route = "{{ route('catalogos.destroy', ':catalogoId') }}".replace(':catalogoId', catalogoId);
                 
                         Swal.fire({
-                            title: '¿Estás seguro de eliminar este catálogo?',
+                            title: '¿Estás seguro de eliminar este producto?',
                             text: '¡No podrás deshacer esta acción!',
                             icon: 'warning',
                             showCancelButton: true,
@@ -108,7 +108,7 @@
                                         // Maneja el error de eliminación aquí
                                         Swal.fire({
                                             title: 'Error',
-                                            text: 'No se pudo eliminar este catálogo.',
+                                            text: 'No se pudo eliminar este producto.',
                                             icon: 'error',
                                         });
                                     }
@@ -141,7 +141,7 @@
     }
     function confirmUpdate(catalogoId) {
         Swal.fire({
-            title: '¿Quieres actualizar este catálogo?',
+            title: '¿Quieres actualizar este producto?',
             text: '¿Vas a actualizar este catálogo, quieres continuar?',
             icon: 'question',
             showCancelButton: true,
