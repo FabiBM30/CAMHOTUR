@@ -195,7 +195,7 @@ searchInput.addEventListener('input', searchEmployees);
                         // Maneja el error de eliminación aquí
                         Swal.fire({
                             title: 'Error',
-                            text: 'No se pudo eliminar el registro.',
+                            text: 'No se pudo eliminar este emprendimiento ya que tiene productos asignados.',
                             icon: 'error',
                         });
                     }

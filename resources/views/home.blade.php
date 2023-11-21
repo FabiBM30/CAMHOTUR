@@ -813,7 +813,7 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
   <div style="display: inline-block;">
     <article class="article-wrapper">
       <figure class="shield-figure">
-        <img src="{{ asset('images/GABY2.jpg') }}" alt="" width="200">
+        <img src="{{ asset('images/gaby1.png') }}" alt="" width="200">
       </figure>
       <div class="article-body">
         <h2><strong>FRONT-END</strong></h2>
