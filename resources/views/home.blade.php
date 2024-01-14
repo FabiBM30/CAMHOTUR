@@ -852,6 +852,37 @@ class="text-center" > <strong>Desarrolladores</strong></h1>
 <br>
 <br>
 <br>
+
+
+<!--parte del boton de formulario-->
+<div class="container">
+  <div class="left-content">
+    <h2>Somos CAMHOTUR</h2>
+    <p>Por medio de este apartado, ofrecemos a las personas con emprendimientos la posibilidad de asociarse a la Cámara Hojancheña de Turismo (CAMHOTUR).</p>
+
+    <div class="quote">
+      <i class="fa fa-quote-left"></i>
+      <p>Agregar nueva descripcion.</p>
+    </div>
+  </div>
+
+
+  <div class="right-content">
+    <div class="form-container">
+      <!-- Ajusta 'tu_imagen.jpg' con la ruta correcta de tu imagen -->
+      <img src="{{ asset('') }}" alt="Descripción de la imagen">
+      <a href="URL_del_formulario_de_Google" class="main-border-button">
+        Ir al formulario
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
       <!-- Zona Turística Potencial -->
       <section class="container" style="font-family: Arial, sans-serif; line-height: 2;">
         <h1 class="text-center" style="font-size: 26px;"><strong>Zona Turística Potencial</strong></h1>
